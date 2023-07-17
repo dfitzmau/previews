@@ -26,7 +26,6 @@
   <meta content="OpenShift" name="application-name">
   <meta content="#000000" name="msapplication-TileColor">
   <meta content="https://assets.openshift.net/content/subdomain/touch-icon-precomposed.png" name="msapplication-TileImage">
-
   <!-- Adobe DTM -->
   <script src="//www.redhat.com/dtm.js" type="text/javascript"></script>
   <!-- End Adobe DTM -->
@@ -280,7 +279,7 @@
 
       <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup1">
         <span id="tgSpan1" class="fa fa-angle-right"></span>
-          Introduction to ROSA
+          Release notes
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
       </a>
@@ -290,6 +289,50 @@
       depending on whether it itself contains further topics or is a single file -->
 
       <ul id="topicGroup1" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_release_notes/rosa-release-notes.html">Red Hat OpenShift Service on AWS release notes</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+      </ul>
+    </li>
+
+<!--  the top level  groupings start here -->
+
+
+
+
+
+<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
+
+    <li class="nav-header">
+
+
+
+
+
+
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup2">
+        <span id="tgSpan2" class="fa fa-angle-right"></span>
+          Introduction to ROSA
+          <!-- prints out the names of the top level books with arrow down or to right
+               So in this case: Welcome 1 and Another Book -->
+      </a>
+
+
+      <!-- this then goes through all the topics within the top level groups
+      depending on whether it itself contains further topics or is a single file -->
+
+      <ul id="topicGroup2" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -315,15 +358,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-1-1">
-                <span id="sgSpan-1-1" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-1">
+                <span id="sgSpan-2-1" class="fa fa-caret-right"></span>
                   &nbsp;ROSA architecture
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-1-1" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-2-1" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -385,15 +428,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-1-2">
-                <span id="sgSpan-1-2" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-2-2">
+                <span id="sgSpan-2-2" class="fa fa-caret-right"></span>
                   &nbsp;Policies and service definition
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-1-2" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-2-2" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -560,92 +603,9 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup2">
-        <span id="tgSpan2" class="fa fa-angle-right"></span>
-          ROSA CLI
-          <!-- prints out the names of the top level books with arrow down or to right
-               So in this case: Welcome 1 and Another Book -->
-      </a>
-
-
-      <!-- this then goes through all the topics within the top level groups
-      depending on whether it itself contains further topics or is a single file -->
-
-      <ul id="topicGroup2" class="collapse  list-unstyled">
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_cli/rosa-get-started-cli.html">Getting started with the ROSA CLI</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_cli/rosa-manage-objects-cli.html">Managing objects with the ROSA CLI</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_cli/rosa-checking-acct-version-cli.html">Checking account and version information with the ROSA CLI</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_cli/rosa-checking-logs-cli.html">Checking logs with the ROSA CLI</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-      </ul>
-    </li>
-
-<!--  the top level  groupings start here -->
-
-
-
-
-
-<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
-
-    <li class="nav-header">
-
-
-
-
-
-
       <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup3">
         <span id="tgSpan3" class="fa fa-angle-right"></span>
-          Red Hat OpenShift Cluster Manager
+          Getting started
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
       </a>
@@ -666,7 +626,33 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../ocm/ocm-overview.html">Red Hat OpenShift Cluster Manager</a></li>
+            <li><a class="" href="../rosa_getting_started/rosa-quickstart-guide-ui.html">ROSA quickstart guide</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_getting_started/rosa-getting-started.html">Comprehensive guide to getting started with ROSA</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_getting_started/rosa-sts-getting-started-workflow.html">Understanding the ROSA with STS deployment workflow</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
       </ul>
@@ -798,63 +784,6 @@
 
       <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup5">
         <span id="tgSpan5" class="fa fa-angle-right"></span>
-          Getting started
-          <!-- prints out the names of the top level books with arrow down or to right
-               So in this case: Welcome 1 and Another Book -->
-      </a>
-
-
-      <!-- this then goes through all the topics within the top level groups
-      depending on whether it itself contains further topics or is a single file -->
-
-      <ul id="topicGroup5" class="collapse  list-unstyled">
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_getting_started/rosa-sts-getting-started-workflow.html">Understanding the ROSA with STS deployment workflow</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-
-        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
-        Welcome 2 and Welcome 1 More -->
-
-
-          <!-- is this is a single page? That is, does this topic have more topics?
-          Welcome 1 More -->
-
-            <!-- ^ this establishs whether we are reading this current page -->
-
-            <li><a class="" href="../rosa_getting_started/rosa-getting-started.html">Getting started with ROSA</a></li>
-            <!--  if active, then highlight it,  otherwise nothing to do -->
-
-      </ul>
-    </li>
-
-<!--  the top level  groupings start here -->
-
-
-
-
-
-<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
-
-    <li class="nav-header">
-
-
-
-
-
-
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup6">
-        <span id="tgSpan6" class="fa fa-angle-right"></span>
           Installing, accessing, and deleting ROSA clusters
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -864,7 +793,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup6" class="collapse  list-unstyled">
+      <ul id="topicGroup5" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -981,15 +910,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-6-8">
-                <span id="sgSpan-6-8" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-5-8">
+                <span id="sgSpan-5-8" class="fa fa-caret-right"></span>
                   &nbsp;Deploying ROSA without AWS STS
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-6-8" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-5-8" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1151,6 +1080,30 @@
 
 
                   <li>
+                    <a class="" href="../rosa_install_access_delete_clusters/rosa_getting_started_iam/rosa-private-cluster.html">
+                      Configuring a private cluster
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../rosa_install_access_delete_clusters/rosa_getting_started_iam/rosa-deleting-access-cluster.html">
                       Deleting access to a ROSA cluster
                     </a>
@@ -1226,9 +1179,92 @@
 
 
 
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup6">
+        <span id="tgSpan6" class="fa fa-angle-right"></span>
+          ROSA CLI
+          <!-- prints out the names of the top level books with arrow down or to right
+               So in this case: Welcome 1 and Another Book -->
+      </a>
+
+
+      <!-- this then goes through all the topics within the top level groups
+      depending on whether it itself contains further topics or is a single file -->
+
+      <ul id="topicGroup6" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_cli/rosa-get-started-cli.html">Getting started with the ROSA CLI</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_cli/rosa-manage-objects-cli.html">Managing objects with the ROSA CLI</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_cli/rosa-checking-acct-version-cli.html">Checking account and version information with the ROSA CLI</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_cli/rosa-checking-logs-cli.html">Checking logs with the ROSA CLI</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+      </ul>
+    </li>
+
+<!--  the top level  groupings start here -->
+
+
+
+
+
+<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
+
+    <li class="nav-header">
+
+
+
+
+
+
       <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup7">
         <span id="tgSpan7" class="fa fa-angle-right"></span>
-          Cluster administration
+          Red Hat OpenShift Cluster Manager
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
       </a>
@@ -1244,21 +1280,65 @@
         Welcome 2 and Welcome 1 More -->
 
 
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../ocm/ocm-overview.html">Red Hat OpenShift Cluster Manager</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
+      </ul>
+    </li>
+
+<!--  the top level  groupings start here -->
+
+
+
+
+
+<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
+
+    <li class="nav-header">
+
+
+
+
+
+
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup8">
+        <span id="tgSpan8" class="fa fa-angle-right"></span>
+          Cluster administration
+          <!-- prints out the names of the top level books with arrow down or to right
+               So in this case: Welcome 1 and Another Book -->
+      </a>
+
+
+      <!-- this then goes through all the topics within the top level groups
+      depending on whether it itself contains further topics or is a single file -->
+
+      <ul id="topicGroup8" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
             <!-- this topic contains subtopics - Welcome 2 -->
 
 
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-7-0">
-                <span id="sgSpan-7-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-8-0">
+                <span id="sgSpan-8-0" class="fa fa-caret-right"></span>
                   &nbsp;Configuring private connections
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-7-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-8-0" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1355,30 +1435,6 @@
 
                 
 
-
-                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
-                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
-
-                
-                
-                
-                
-                
-
-                <!-- is this is a single page? That is, does this topic have more topics?
-                 Welcome 2 Index Page and Welcome 2 More -->
-
-
-
-
-                  <li>
-                    <a class="" href="../rosa_cluster_admin/cloud_infrastructure_access/rosa-private-cluster.html">
-                      Configuring a private cluster
-                    </a>
-                  </li>
-
-                
-
               </ul>
             </li>
 
@@ -1392,15 +1448,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-7-1">
-                <span id="sgSpan-7-1" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-8-1">
+                <span id="sgSpan-8-1" class="fa fa-caret-right"></span>
                   &nbsp;Nodes
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-7-1" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-8-1" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1486,15 +1542,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-7-2">
-                <span id="sgSpan-7-2" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-8-2">
+                <span id="sgSpan-8-2" class="fa fa-caret-right"></span>
                   &nbsp;Logging
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-7-2" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-8-2" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1580,15 +1636,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-7-3">
-                <span id="sgSpan-7-3" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-8-3">
+                <span id="sgSpan-8-3" class="fa fa-caret-right"></span>
                   &nbsp;Monitoring user-defined projects
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-7-3" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-8-3" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1656,6 +1712,30 @@
                   <li>
                     <a class="" href="../rosa_cluster_admin/rosa_monitoring/rosa-configuring-the-monitoring-stack.html">
                       Configuring the monitoring stack
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../rosa_cluster_admin/rosa_monitoring/rosa-enabling-alert-routing-for-user-defined-projects.html">
+                      Enabling alert routing for user-defined projects
                     </a>
                   </li>
 
@@ -1777,9 +1857,9 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup8">
-        <span id="tgSpan8" class="fa fa-angle-right"></span>
-          Cluster security
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup9">
+        <span id="tgSpan9" class="fa fa-angle-right"></span>
+          Authentication and authorization
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
       </a>
@@ -1788,7 +1868,20 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup8" class="collapse  list-unstyled">
+      <ul id="topicGroup9" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../authentication/assuming-an-aws-iam-role-for-a-service-account.html">Assuming an AWS IAM role for a service account</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -1821,8 +1914,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup9">
-        <span id="tgSpan9" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup10">
+        <span id="tgSpan10" class="fa fa-angle-right"></span>
           Upgrading
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -1832,7 +1925,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup9" class="collapse  list-unstyled">
+      <ul id="topicGroup10" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -1891,8 +1984,85 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup10">
-        <span id="tgSpan10" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup11">
+        <span id="tgSpan11" class="fa fa-angle-right"></span>
+          CI/CD
+          <!-- prints out the names of the top level books with arrow down or to right
+               So in this case: Welcome 1 and Another Book -->
+      </a>
+
+
+      <!-- this then goes through all the topics within the top level groups
+      depending on whether it itself contains further topics or is a single file -->
+
+      <ul id="topicGroup11" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+            <!-- this topic contains subtopics - Welcome 2 -->
+
+
+            <!-- start a new heading area -->
+
+            <li class="nav-header">
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-11-0">
+                <span id="sgSpan-11-0" class="fa fa-caret-right"></span>
+                  &nbsp;Builds
+
+                  <!-- prints out the names of the second level books with arrow down or to right
+                  So in this case: Welcome 2 -->
+
+              </a>
+              <ul id="topicSubGroup-11-0" class="nav-tertiary list-unstyled collapse">
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../cicd/builds/setting-up-trusted-ca.html">
+                      Setting up additional trusted certificate authorities for builds
+                    </a>
+                  </li>
+
+                
+
+              </ul>
+            </li>
+      </ul>
+    </li>
+
+<!--  the top level  groupings start here -->
+
+
+
+
+
+<!-- group_id is the one that is user selected. topic_group[id] is what we are parsing via navigation -->
+
+    <li class="nav-header">
+
+
+
+
+
+
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup12">
+        <span id="tgSpan12" class="fa fa-angle-right"></span>
           Add-on services
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -1902,7 +2072,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup10" class="collapse  list-unstyled">
+      <ul id="topicGroup12" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -1948,8 +2118,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup11">
-        <span id="tgSpan11" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup13">
+        <span id="tgSpan13" class="fa fa-angle-right"></span>
           Storage and registry
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -1959,7 +2129,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup11" class="collapse  list-unstyled">
+      <ul id="topicGroup13" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -1972,15 +2142,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-11-0">
-                <span id="sgSpan-11-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-13-0">
+                <span id="sgSpan-13-0" class="fa fa-caret-right"></span>
                   &nbsp;Persistent storage
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-11-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-13-0" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -1999,7 +2169,7 @@
 
                   <li>
                     <a class="" href="../storage/persistent_storage/rosa-persistent-storage-aws-ebs.html">
-                      Persistent storage using AWS Elastic Block Store (EBS)
+                      Persistent storage using AWS Elastic Block Store
                     </a>
                   </li>
 
@@ -2023,7 +2193,31 @@
 
                   <li>
                     <a class="" href="../storage/persistent_storage/osd-persistent-storage-aws.html">
-                      Persistent storage using AWS EFS
+                      Persistent storage using AWS Elastic File Service
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../storage/persistent_storage/rosa-persistent-storage-aws-efs-csi.html">
+                      AWS Elastic File Service CSI Driver Operator
                     </a>
                   </li>
 
@@ -2049,8 +2243,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup12">
-        <span id="tgSpan12" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup14">
+        <span id="tgSpan14" class="fa fa-angle-right"></span>
           Networking
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -2060,7 +2254,20 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup12" class="collapse  list-unstyled">
+      <ul id="topicGroup14" class="collapse  list-unstyled">
+
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../networking/ingress-operator.html">Understanding the Ingress Operator</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -2073,15 +2280,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-12-0">
-                <span id="sgSpan-12-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-14-1">
+                <span id="sgSpan-14-1" class="fa fa-caret-right"></span>
                   &nbsp;OpenShift SDN default CNI network provider
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-12-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-14-1" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -2118,7 +2325,7 @@
 
             <!-- ^ this establishs whether we are reading this current page -->
 
-            <li><a class="" href="../networking/configuring-cluster-wide-proxy.html">Configuring a cluster-wide proxy during installation</a></li>
+            <li><a class="" href="../networking/configuring-cluster-wide-proxy.html">Configuring a cluster-wide proxy</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
 
@@ -2134,6 +2341,218 @@
             <li><a class="" href="../networking/cidr-range-definitions.html">CIDR range definitions</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+            <!-- this topic contains subtopics - Welcome 2 -->
+
+
+            <!-- start a new heading area -->
+
+            <li class="nav-header">
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-14-4">
+                <span id="sgSpan-14-4" class="fa fa-caret-right"></span>
+                  &nbsp;Network policy
+
+                  <!-- prints out the names of the second level books with arrow down or to right
+                  So in this case: Welcome 2 -->
+
+              </a>
+              <ul id="topicSubGroup-14-4" class="nav-tertiary list-unstyled collapse">
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/network_policy/about-network-policy.html">
+                      About network policy
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/network_policy/creating-network-policy.html">
+                      Creating a network policy
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/network_policy/viewing-network-policy.html">
+                      Viewing a network policy
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/network_policy/deleting-network-policy.html">
+                      Deleting a network policy
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/network_policy/multitenant-network-policy.html">
+                      Configuring multitenant isolation with network policy
+                    </a>
+                  </li>
+
+                
+
+              </ul>
+            </li>
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+            <!-- this topic contains subtopics - Welcome 2 -->
+
+
+            <!-- start a new heading area -->
+
+            <li class="nav-header">
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-14-5">
+                <span id="sgSpan-14-5" class="fa fa-caret-right"></span>
+                  &nbsp;Configuring Routes
+
+                  <!-- prints out the names of the second level books with arrow down or to right
+                  So in this case: Welcome 2 -->
+
+              </a>
+              <ul id="topicSubGroup-14-5" class="nav-tertiary list-unstyled collapse">
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/routes/route-configuration.html">
+                      Route configuration
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../networking/routes/secured-routes.html">
+                      Secured routes
+                    </a>
+                  </li>
+
+                
+
+              </ul>
+            </li>
       </ul>
     </li>
 
@@ -2152,8 +2571,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup13">
-        <span id="tgSpan13" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup15">
+        <span id="tgSpan15" class="fa fa-angle-right"></span>
           Application development
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -2163,7 +2582,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup13" class="collapse  list-unstyled">
+      <ul id="topicGroup15" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -2176,15 +2595,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-13-0">
-                <span id="sgSpan-13-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-15-0">
+                <span id="sgSpan-15-0" class="fa fa-caret-right"></span>
                   &nbsp;Deployments
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-13-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-15-0" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -2229,8 +2648,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup14">
-        <span id="tgSpan14" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup16">
+        <span id="tgSpan16" class="fa fa-angle-right"></span>
           Backing up and restoring applications
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -2240,7 +2659,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup14" class="collapse  list-unstyled">
+      <ul id="topicGroup16" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -2273,8 +2692,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup15">
-        <span id="tgSpan15" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup17">
+        <span id="tgSpan17" class="fa fa-angle-right"></span>
           Service Mesh
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -2284,7 +2703,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup15" class="collapse  list-unstyled">
+      <ul id="topicGroup17" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -2297,15 +2716,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-15-0">
-                <span id="sgSpan-15-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-17-0">
+                <span id="sgSpan-17-0" class="fa fa-caret-right"></span>
                   &nbsp;Service Mesh 2.x
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-15-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-17-0" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -2943,15 +3362,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-15-1">
-                <span id="sgSpan-15-1" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-17-1">
+                <span id="sgSpan-17-1" class="fa fa-caret-right"></span>
                   &nbsp;Service Mesh 1.x
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-15-1" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-17-1" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -3260,8 +3679,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup16">
-        <span id="tgSpan16" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup18">
+        <span id="tgSpan18" class="fa fa-angle-right"></span>
           Serverless
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -3271,7 +3690,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup16" class="collapse  list-unstyled">
+      <ul id="topicGroup18" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -3284,15 +3703,15 @@
             <!-- start a new heading area -->
 
             <li class="nav-header">
-              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-16-0">
-                <span id="sgSpan-16-0" class="fa fa-caret-right"></span>
+              <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicSubGroup-18-0">
+                <span id="sgSpan-18-0" class="fa fa-caret-right"></span>
                   &nbsp;About Serverless
 
                   <!-- prints out the names of the second level books with arrow down or to right
                   So in this case: Welcome 2 -->
 
               </a>
-              <ul id="topicSubGroup-16-0" class="nav-tertiary list-unstyled collapse">
+              <ul id="topicSubGroup-18-0" class="nav-tertiary list-unstyled collapse">
 
                 <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
                      Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
@@ -3337,8 +3756,8 @@
 
 
 
-      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup17">
-        <span id="tgSpan17" class="fa fa-angle-right"></span>
+      <a class="" href="javascript:void(0);" data-toggle="collapse" data-target="#topicGroup19">
+        <span id="tgSpan19" class="fa fa-angle-right"></span>
           Troubleshooting
           <!-- prints out the names of the top level books with arrow down or to right
                So in this case: Welcome 1 and Another Book -->
@@ -3348,7 +3767,7 @@
       <!-- this then goes through all the topics within the top level groups
       depending on whether it itself contains further topics or is a single file -->
 
-      <ul id="topicGroup17" class="collapse  list-unstyled">
+      <ul id="topicGroup19" class="collapse  list-unstyled">
 
 
         <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
@@ -3402,6 +3821,19 @@
             <li><a class="" href="../rosa_support/rosa-troubleshooting-deployments.html">Troubleshooting cluster deployments</a></li>
             <!--  if active, then highlight it,  otherwise nothing to do -->
 
+
+        <!-- for each topic in this topic_group, for example in Welcome 1, what topics exist?
+        Welcome 2 and Welcome 1 More -->
+
+
+          <!-- is this is a single page? That is, does this topic have more topics?
+          Welcome 1 More -->
+
+            <!-- ^ this establishs whether we are reading this current page -->
+
+            <li><a class="" href="../rosa_support/rosa-managed-resources.html">Red Hat OpenShift Service on AWS managed resources</a></li>
+            <!--  if active, then highlight it,  otherwise nothing to do -->
+
       </ul>
     </li>
 </ul>
@@ -3436,12 +3868,10 @@
 <li><a href="#rosa-sts-customer-requirements_rosa-sts-aws-prereqs">Customer requirements when using STS for deployment</a>
 <ul class="sectlevel2">
 <li><a href="#rosa-account_rosa-sts-aws-prereqs">Account</a></li>
-<li><a href="#rosa-associating-concept_rosa-sts-aws-prereqs">AWS account association</a></li>
-<li><a href="#rosa-associating-account_rosa-sts-aws-prereqs">Linking your AWS account</a></li>
-<li><a href="#rosa-associating-multiple-account_rosa-sts-aws-prereqs">Associating multiple AWS accounts with your Red Hat organization</a></li>
 <li><a href="#rosa-access-requirements_rosa-sts-aws-prereqs">Access requirements</a></li>
 <li><a href="#rosa-support-requirements_rosa-sts-aws-prereqs">Support requirements</a></li>
 <li><a href="#rosa-security-requirements_rosa-sts-aws-prereqs">Security requirements</a></li>
+<li><a href="#rosa-ocm-requirements_rosa-sts-aws-prereqs">Requirements for using OpenShift Cluster Manager</a></li>
 </ul>
 </li>
 <li><a href="#rosa-requirements-deploying-in-opt-in-regions_rosa-sts-aws-prereqs">Requirements for deploying a cluster in an opt-in region</a>
@@ -3589,7 +4019,82 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="rosa-associating-concept_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-concept_rosa-sts-aws-prereqs"></a>AWS account association</h3>
+<h3 id="rosa-access-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-access-requirements_rosa-sts-aws-prereqs"></a>Access requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat must have AWS console access to the customer-provided AWS account. Red Hat protects and manages this access.</p>
+</li>
+<li>
+<p>You must not use the AWS account to elevate your permissions within the Red Hat OpenShift Service on AWS cluster.</p>
+</li>
+<li>
+<p>Actions available in the <code>rosa</code> CLI utility or <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a> console must not be directly performed in your AWS account.</p>
+</li>
+<li>
+<p>You do not need to have a preconfigured domain to deploy ROSA clusters. If you wish to use a custom domain, see the Additional resources for information.</p>
+</li>
+</ul>
+</div>
+<div id="additional-resources_aws-access-requirements_rosa-sts-aws-prereqs" class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p>See <a href="../applications/deployments/osd-config-custom-domains-applications.html#osd-applications-config-custom-domains">Configuring custom domains for applications</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rosa-support-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-support-requirements_rosa-sts-aws-prereqs"></a>Support requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat recommends that the customer have at least <a href="https://aws.amazon.com/premiumsupport/plans/">Business Support</a> from AWS.</p>
+</li>
+<li>
+<p>Red Hat may have permission from the customer to request AWS support on their behalf.</p>
+</li>
+<li>
+<p>Red Hat may have permission from the customer to request AWS resource limit increases on the customer&#8217;s account.</p>
+</li>
+<li>
+<p>Red Hat manages the restrictions, limitations, expectations, and defaults for all Red Hat OpenShift Service on AWS clusters in the same manner, unless otherwise specified in this requirements section.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rosa-security-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-security-requirements_rosa-sts-aws-prereqs"></a>Security requirements</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Red Hat must have ingress access to EC2 hosts and the API server from allow-listed IP addresses.</p>
+</li>
+<li>
+<p>Red Hat must have egress allowed to the documented domains. See the "AWS firewall prerequisites" section for the designated domains.</p>
+</li>
+</ul>
+</div>
+<div id="additional-resources_aws-security-requirements_rosa-sts-aws-prereqs" class="ulist _additional-resources">
+<div class="title">Additional resources</div>
+<ul>
+<li>
+<p><a href="../rosa_planning/rosa-sts-aws-prereqs.html#osd-aws-privatelink-firewall-prerequisites_rosa-sts-aws-prereqs">AWS firewall prerequisites</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rosa-ocm-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-ocm-requirements_rosa-sts-aws-prereqs"></a>Requirements for using OpenShift Cluster Manager</h3>
+<div class="paragraph">
+<p>The following sections describe requirements for <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a>. If you use the CLI tools exclusively, then you can disregard the requirements.</p>
+</div>
+<div class="paragraph">
+<p>To use OpenShift Cluster Manager, you must link your AWS accounts. This linking concept is also known as account association.</p>
+</div>
+<div class="sect3">
+<h4 id="rosa-associating-concept_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-concept_rosa-sts-aws-prereqs"></a>AWS account association</h4>
 <div class="paragraph">
 <p>Red Hat OpenShift Service on AWS (ROSA) cluster-provisioning tasks require linking <code>ocm-role</code> and <code>user-role</code> OpenShift Cluster Manager IAM resources to your AWS account using your Amazon Resource Name (ARN).</p>
 </div>
@@ -3597,8 +4102,8 @@
 <p>The <code>ocm-role</code> ARN is stored as a label in your Red Hat organization while the <code>user-role</code> ARN is stored as a label inside your Red Hat user account. Red Hat uses these ARN labels to confirm that the user is a valid account holder and that the correct permissions are available to perform the necessary tasks in the AWS account.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="rosa-associating-account_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-account_rosa-sts-aws-prereqs"></a>Linking your AWS account</h3>
+<div class="sect3">
+<h4 id="rosa-associating-account_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-account_rosa-sts-aws-prereqs"></a>Linking your AWS account</h4>
 <div class="paragraph">
 <p>You link your AWS account using the <code>rosa</code> CLI.</p>
 </div>
@@ -3609,10 +4114,10 @@
 <p>You have an AWS account.</p>
 </li>
 <li>
-<p>You are using <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a> to create clusters.</p>
+<p>You are using <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a> to create clusters.</p>
 </li>
 <li>
-<p>You have the permissions required to install AWS account-wide roles.</p>
+<p>You have the permissions required to install AWS account-wide roles. See the "Additional resources" of this section for more information.</p>
 </li>
 <li>
 <p>You have installed and configured the latest AWS (<code>aws</code>) and ROSA (<code>rosa</code>) CLIs on your installation host.</p>
@@ -3673,9 +4178,17 @@
 </li>
 </ol>
 </div>
+<h2 id="additional-resources_creating-association_rosa-sts-aws-prereqs" class="discrete _additional-resources">Additional resources</h2>
+<div class="ulist">
+<ul>
+<li>
+<p>See <a href="../rosa_architecture/rosa-sts-about-iam-resources.html#rosa-sts-account-wide-roles-and-policies_rosa-sts-about-iam-resources">Account-wide IAM role and policy reference</a> for a list of IAM roles needed for cluster creation.</p>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="rosa-associating-multiple-account_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-multiple-account_rosa-sts-aws-prereqs"></a>Associating multiple AWS accounts with your Red Hat organization</h3>
+</div>
+<div class="sect3">
+<h4 id="rosa-associating-multiple-account_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-associating-multiple-account_rosa-sts-aws-prereqs"></a>Associating multiple AWS accounts with your Red Hat organization</h4>
 <div class="paragraph">
 <p>You can associate multiple AWS accounts with your Red Hat organization. Associating multiple accounts lets you create Red Hat OpenShift Service on AWS (ROSA) clusters on any of the associated AWS accounts from your Red Hat organization.</p>
 </div>
@@ -3689,7 +4202,7 @@
 <p>You have an AWS account.</p>
 </li>
 <li>
-<p>You are using <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a> to create clusters.</p>
+<p>You are using <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager Hybrid Cloud Console</a> to create clusters.</p>
 </li>
 <li>
 <p>You have the permissions required to install AWS account-wide roles.</p>
@@ -3751,72 +4264,6 @@
 </tr>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="rosa-access-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-access-requirements_rosa-sts-aws-prereqs"></a>Access requirements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Red Hat must have AWS console access to the customer-provided AWS account. Red Hat protects and manages this access.</p>
-</li>
-<li>
-<p>You must not use the AWS account to elevate your permissions within the Red Hat OpenShift Service on AWS cluster.</p>
-</li>
-<li>
-<p>Actions available in the <code>rosa</code> CLI utility or <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a> console must not be directly performed in your AWS account.</p>
-</li>
-<li>
-<p>You do not need to have a preconfigured domain to deploy ROSA clusters. If you wish to use a custom domain, see the Additional resources for information.</p>
-</li>
-</ul>
-</div>
-<div id="additional-resources_aws-access-requirements_rosa-sts-aws-prereqs" class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p>See <a href="../applications/deployments/osd-config-custom-domains-applications.html#osd-applications-config-custom-domains">Configuring custom domains for applications</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="rosa-support-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-support-requirements_rosa-sts-aws-prereqs"></a>Support requirements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Red Hat recommends that the customer have at least <a href="https://aws.amazon.com/premiumsupport/plans/">Business Support</a> from AWS.</p>
-</li>
-<li>
-<p>Red Hat may have permission from the customer to request AWS support on their behalf.</p>
-</li>
-<li>
-<p>Red Hat may have permission from the customer to request AWS resource limit increases on the customer&#8217;s account.</p>
-</li>
-<li>
-<p>Red Hat manages the restrictions, limitations, expectations, and defaults for all Red Hat OpenShift Service on AWS clusters in the same manner, unless otherwise specified in this requirements section.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="rosa-security-requirements_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-security-requirements_rosa-sts-aws-prereqs"></a>Security requirements</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Red Hat must have ingress access to EC2 hosts and the API server from allow-listed IP addresses.</p>
-</li>
-<li>
-<p>Red Hat must have egress allowed to the documented domains. See the "AWS firewall prerequisites" section for the designated domains.</p>
-</li>
-</ul>
-</div>
-<div id="additional-resources_aws-security-requirements_rosa-sts-aws-prereqs" class="ulist _additional-resources">
-<div class="title">Additional resources</div>
-<ul>
-<li>
-<p><a href="../rosa_planning/rosa-sts-aws-prereqs.html#osd-aws-privatelink-firewall-prerequisites_rosa-sts-aws-prereqs">AWS firewall prerequisites</a></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -3923,7 +4370,20 @@
 <h2 id="rosa-sts-policy-iam_rosa-sts-aws-prereqs"><a class="anchor" href="#rosa-sts-policy-iam_rosa-sts-aws-prereqs"></a>Red Hat managed IAM references for AWS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>With the STS deployment model, Red Hat is no longer responsible for creating and managing Amazon Web Services (AWS) IAM policies, IAM users, or IAM roles.</p>
+<p>With the STS deployment model, Red Hat is no longer responsible for creating and managing Amazon Web Services (AWS) IAM policies, IAM users, or IAM roles. For information on creating these roles and policies, see the following sections on IAM roles.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To use the <code>ocm</code> CLI, you must have an <code>ocm-role</code> and <code>user-role</code> resource. See <a href="../rosa_planning/rosa-sts-ocm-role.html#rosa-sts-ocm-role">OpenShift Cluster Manager IAM role resources</a>.</p>
+</li>
+<li>
+<p>If you have a single cluster, see <a href="../rosa_architecture/rosa-sts-about-iam-resources.html#rosa-sts-account-wide-roles-and-policies_rosa-sts-about-iam-resources">Account-wide IAM role and policy reference</a>.</p>
+</li>
+<li>
+<p>For every cluster, you must have the necessary operator roles. See <a href="../rosa_architecture/rosa-sts-about-iam-resources.html#rosa-sts-operator-roles_rosa-sts-about-iam-resources">Cluster-specific Operator IAM role reference</a>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3955,7 +4415,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>For further guidance on worker node counts, see the link to "Initial Planning Considerations" in the "Additional resources" section of this page.</p>
+<p>For further guidance on worker node counts, see the information about initial planning considerations in the "Limits and scalability" topic listed in the "Additional resources" section of this page.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4056,7 +4516,7 @@
 <p><strong>Subnets</strong>: Two subnets for a cluster with a single availability zone, or six subnets for a cluster with multiple availability zones.</p>
 </li>
 <li>
-<p><strong>Router tables</strong>: One router table per private subnet, and one additional table per cluster.</p>
+<p><strong>Route tables</strong>: One route table per private subnet, and one additional table per cluster.</p>
 </li>
 <li>
 <p><strong>Internet gateways</strong>: One Internet Gateway per cluster.</p>
@@ -4583,6 +5043,9 @@ OR
 </li>
 <li>
 <p><a href="../applications/deployments/osd-config-custom-domains-applications.html#osd-applications-config-custom-domains">Configuring custom domains for applications</a></p>
+</li>
+<li>
+<p><a href="../rosa_architecture/rosa_policy_service_definition/rosa-service-definition.html#rosa-sdpolicy-instance-types_rosa-service-definition">Instance types</a></p>
 </li>
 </ul>
 </div>
