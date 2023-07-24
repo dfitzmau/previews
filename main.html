@@ -472,6 +472,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#non-breaking-spaces">Non-breaking spaces</a></li>
 <li><a href="#_product_names_and_version_references">Product names and version references</a></li>
 <li><a href="#single-step-procedures">Single-step procedures</a></li>
+<li><a href="#titles-and-headings">Titles and headings</a></li>
 <li><a href="#user-replaced-values">User-replaced values</a></li>
 <li><a href="#user-replaced-values-xml">User-replaced values for XML</a></li>
 </ul>
@@ -538,6 +539,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#glossary-terms-conventions">Glossary of terms and conventions</a>
 <ul class="sectlevel2">
+<li><a href="#_special_characters">Special characters</a></li>
+<li><a href="#_0_9">0-9</a></li>
 <li><a href="#_a">A</a></li>
 <li><a href="#_b">B</a></li>
 <li><a href="#_c">C</a></li>
@@ -564,7 +567,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_x">X</a></li>
 <li><a href="#_y">Y</a></li>
 <li><a href="#_z">Z</a></li>
-<li><a href="#_symbols">Symbols</a></li>
 </ul>
 </li>
 </ul>
@@ -640,6 +642,69 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 </tr>
 </table>
+</div>
+<h4 id="june-2023" class="discrete">June 2023</h4>
+<div class="ulist">
+<div class="title">Glossary entries</div>
+<ul>
+<li>
+<p><a href="#ansible-playbook">Ansible Playbook</a>: Updated glossary entry for preferred spelling</p>
+</li>
+<li>
+<p><a href="#bimodal-it">bimodal IT</a>: Updated glossary entry to include link to the Gartner website</p>
+</li>
+<li>
+<p><a href="#bimonthly">bimonthly</a>: Updated to "do not use" because the term can be ambiguous</p>
+</li>
+<li>
+<p><a href="#biweekly">biweekly</a>: Updated to "do not use" because the term can be ambiguous</p>
+</li>
+<li>
+<p><a href="#codebase">codebase</a>: Added glossary entry</p>
+</li>
+<li>
+<p><a href="#sos-report">sos report</a>: Added glossary entry</p>
+</li>
+<li>
+<p><a href="#sosreport">sosreport</a>: Added glossary entry</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">Other updates</div>
+<ul>
+<li>
+<p>Added a <a href="#_0_9">0-9</a> section and moved entries starting with a number to it.</p>
+</li>
+<li>
+<p>Added links to the new Red&#160;Hat <a href="https://redhat-documentation.github.io/accessibility-guide/"><em>Getting started with accessibility for writers</em></a> guide.</p>
+</li>
+<li>
+<p>Removed the <em>Cloud services guidelines</em> heading, since all guidelines under it were applicable to all product documentation. Redistributed its guidelines to other sections:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Moved <a href="#accessibility">Accessibility</a> to its own top-level section.</p>
+</li>
+<li>
+<p>Moved the <em>Localization</em> guideline to a note in <a href="#conversational-style">Conversational style</a>.</p>
+</li>
+<li>
+<p>Moved <a href="#microcopy">Microcopy</a> to <a href="#graphical-interfaces">Graphical interfaces</a>.</p>
+</li>
+<li>
+<p>Moved <a href="#screenshots">Screenshots</a> to <a href="#graphical-interfaces">Graphical interfaces</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Renamed <em>Symbols</em> to <a href="#_special_characters">Special characters</a>.</p>
+</li>
+<li>
+<p>Updated the guide to use a new look and feel.</p>
+</li>
+</ul>
 </div>
 <h4 id="may-2023" class="discrete">May 2023</h4>
 <div class="ulist">
@@ -1058,7 +1123,8 @@ Therefore, be aware of this potential issue, and, when possible, avoid writing s
 <div class="sect3">
 <h4 id="non-breaking-spaces">Non-breaking spaces</h4>
 <div class="paragraph">
-<p>Use a <em>non-breaking space</em> (<code>{nbsp}</code>) between the words "Red" and "Hat". The non-breaking space prevents an automatic line break from separating the two words onto two lines.</p>
+<p>Use a <em>non-breaking space</em> (<code>{nbsp}</code>) between the words "Red" and "Hat". The non-breaking space prevents an automatic line break from separating the two words onto two lines.
+A <em>non-breaking space</em> prevents the company name from splitting across a line break.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example AsciiDoc: Non-breaking space</div>
@@ -1179,6 +1245,26 @@ For example, you might combine existing product name attributes to create compou
 </ul>
 </div>
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="titles-and-headings">Titles and headings</h4>
+<div class="paragraph">
+<p>Write all titles and headings, including the titles of product documentation guides and Knowledgebase articles, in sentence-style capitalization. Do not use headline-style capitalization.</p>
+</div>
+<div class="ulist">
+<div class="title">Examples</div>
+<ul>
+<li>
+<p><em>Composing a customized RHEL system image</em></p>
+</li>
+<li>
+<p><em>Configuring the node port service range</em></p>
+</li>
+<li>
+<p><em>How to perform an unsupported conversion from a RHEL-derived Linux distribution to RHEL</em></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
@@ -1679,7 +1765,7 @@ collections:
 <div class="sect2">
 <h3 id="graphical-interfaces">Graphical interfaces</h3>
 <div class="paragraph">
-<p>For more detailed guidance on how to document UI elements, see <a href="https://www.patternfly.org/v4/ux-writing/about">PatternFly</a>.</p>
+<p>For more detailed guidance on how to document user interface (UI) elements, see <a href="https://www.patternfly.org/v4/ux-writing/about">PatternFly</a>.</p>
 </div>
 <div class="sect3">
 <h4 id="microcopy">Microcopy</h4>
@@ -1711,13 +1797,16 @@ collections:
 <div class="sect3">
 <h4 id="user-interface-elements">User interface elements</h4>
 <div class="paragraph">
-<p>Bold all graphical user interface elements, including, but not limited to, menu names, menu items, button names, dialog box names, and window names. Bold the item, even if it is not clickable.</p>
+<p>Use bold text for all graphical user interface (GUI) element names, including menus, menu items, buttons, dialog boxes, and windows. Use bold text for the element name if the name appears in the GUI, even if the element is not clickable.</p>
 </div>
 <div class="listingblock">
 <div class="title">Example AsciiDoc</div>
 <div class="content">
 <pre>On the *Installed Operators* page, click *Metering*.</pre>
 </div>
+</div>
+<div class="paragraph">
+<p>If an element is not labeled in the GUI, refer to the element by a generic description and do not use bold text. For example, if a search field is not labeled in the GUI, write it as "the search field", not "the <strong>Search</strong> field".</p>
 </div>
 </div>
 </div>
@@ -1932,7 +2021,7 @@ Meaningful link text describes to users what content they will see if they click
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Some products, such as Openshift Container Platform,  do not include Developer Preview content in the documentation. Check with your Content Strategist or Support contact to confirm whether you can publish Developer Preview documentation for your product.</p>
+<p>Some products, such as Red Hat Openshift Container Platform, do not include Developer Preview content in the documentation. Check with your Content Strategist or Support contact to confirm whether you can publish Developer Preview documentation for your product.</p>
 </div>
 </td>
 </tr>
@@ -2396,6 +2485,109 @@ Avoid indicating direction, such as left, right, above and below, since these ha
 <p>This glossary is the central location for terms and conventions for technical language in Red Hat product documentation and other technical content.</p>
 </div>
 <div class="sect2">
+<h3 id="_special_characters">Special characters</h3>
+<h4 id="_ampersand" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> ampersand (&amp;)</h4>
+<div id="ampersand" class="paragraph">
+<p><strong>Description</strong>: Ampersands ("&amp;") can be used in design elements and graphics when space is limited and when either referring to or quoting third-party content that uses them. Do not use an ampersand in original body copy.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: with caution</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>:</p>
+</div>
+<h4 id="_exclamation_point" class="discrete"><span class="image"><img src="images/no.png" alt="no"></span> exclamation point (!)</h4>
+<div id="exclamation-point" class="paragraph">
+<p><strong>Description</strong>: Do not use exclamation points ("!") at the end of sentences. An exclamation point can be used when referring to a command, such as the bang (!) command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: no</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>:</p>
+</div>
+<h4 id="_plus_symbol" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> plus symbol (+)</h4>
+<div id="plus-symbol" class="paragraph">
+<p><strong>Description</strong>: Plus symbols ("+") can be used in design elements and graphics when space is limited and when either referring to or quoting third-party content that uses them. Do not use a plus symbol in original body copy.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: with caution</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>:</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_0_9">0-9</h3>
+<h4 id="bit-64-arm" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> 64-bit ARM (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: A 64-bit version of the ARM architecture. This term can refer to both AArch66/<code>aarch64</code> and ARM64/<code>arm64</code>. Use this format in general cases when writing for both names of the architecture for various cloud providers.</p>
+</div>
+<div class="paragraph">
+<p>Cloud providers can use different formats of this term when using architectures. If you are documenting hard code, commands, or outputs, confer with your SME on the correct format for the specific use case.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Amazon Web Service (AWS) on 64-bit ARM systems.</em></p>
+</li>
+<li>
+<p><em>Machine types for Azure on 64-bit ARM infrastructures.</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#aarch64">aarch64</a>, <a href="#arm64">arm64</a></p>
+</div>
+<h4 id="bit-64-x86" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> 64-bit x86 (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: A 64-bit version of the x86 architecture. This term can refer to both x86_64 and AMD64/<code>amd64</code>. Use this format in general cases when writing for both names of the architectures for various cloud providers.</p>
+</div>
+<div class="paragraph">
+<p>Cloud providers can use different formats of this term when using architectures. If you are documenting hard code, commands or outputs, confer with your SME on the correct format for the specific use case.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Amazon Web Service (AWS) on 64-bit x86 systems</em></p>
+</li>
+<li>
+<p><em>Machine types for Azure on 64-bit x86 infrastructures</em></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: x64, x86-64, or x86</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#x86_64">x86_64</a></p>
+</div>
+</div>
+<div class="sect2">
 <h3 id="_a">A</h3>
 <h4 id="aarch64" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> AArch64 (noun)</h4>
 <div class="paragraph">
@@ -2669,7 +2861,7 @@ Avoid indicating direction, such as left, right, above and below, since these ha
 <p><strong>Use it</strong>: yes</p>
 </div>
 <div class="paragraph">
-<p><strong>Incorrect forms</strong>: <em>AMD64</em></p>
+<p><strong>Incorrect forms</strong>:</p>
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#amd64">amd64</a></p>
@@ -2802,7 +2994,7 @@ Avoid indicating direction, such as left, right, above and below, since these ha
 </div>
 <h4 id="ansible-play" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Ansible play (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: <em>Ansible plays</em> are the building blocks of Ansible playbooks. The goal of an Ansible play is to map a group of hosts to some well-defined roles, represented by Ansible tasks.</p>
+<p><strong>Description</strong>: <em>Ansible plays</em> are the building blocks of Ansible Playbooks. The goal of an Ansible play is to map a group of hosts to some well-defined roles, represented by Ansible tasks.</p>
 </div>
 <div class="paragraph">
 <p><strong>Use it</strong>: yes</p>
@@ -2811,17 +3003,33 @@ Avoid indicating direction, such as left, right, above and below, since these ha
 <p><strong>Incorrect forms</strong>:</p>
 </div>
 <div class="paragraph">
-<p><strong>See also</strong>: <a href="#ansible-playbook">Ansible playbook</a></p>
+<p><strong>See also</strong>: <a href="#ansible-playbook">Ansible Playbook</a></p>
 </div>
-<h4 id="ansible-playbook" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Ansible playbook (noun)</h4>
+<h4 id="ansible-playbook" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Ansible Playbook (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process. An <em>Ansible playbook</em> is a file that contains one or more Ansible plays.</p>
+<p><strong>Description</strong>: Playbooks are Ansible’s configuration, deployment, and orchestration language.
+Playbooks can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process.
+An <em>Ansible Playbook</em> is a file that contains one or more Ansible plays.
+Write as shown: uppercase <em>A</em> and uppercase <em>P</em>. When using the term <em>playbook</em> without the Ansible prefix, use lowercase <em>p</em>.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Run an Ansible Playbook.</p>
+</li>
+<li>
+<p>Run a playbook in Ansible.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Use it</strong>: yes</p>
 </div>
 <div class="paragraph">
-<p><strong>Incorrect forms</strong>:</p>
+<p><strong>Incorrect forms</strong>: Ansible playbook</p>
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#ansible-play">Ansible play</a></p>
@@ -3144,35 +3352,6 @@ An Ansible task is a set of instructions to achieve a state defined, in its broa
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#ARM64">ARM64</a></p>
 </div>
-<h4 id="bit-64-arm" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> 64-bit ARM (noun)</h4>
-<div class="paragraph">
-<p><strong>Description</strong>: A 64-bit version of the ARM architecture. This term can refer to both AArch66/<code>aarch64</code> and ARM64/<code>arm64</code>. Use this format in general cases when writing for both names of the architecture and various cloud providers.</p>
-</div>
-<div class="paragraph">
-<p>Cloud providers can use different formats of this term when using architectures. If you are documenting hard code, commands, or outputs, confer with your SME on the correct format for the specific use case.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Amazon Web Service (AWS) on 64-bit ARM systems.</em></p>
-</li>
-<li>
-<p><em>Machine types for Azure on 64-bit ARM infrastructures.</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Use it</strong>: yes</p>
-</div>
-<div class="paragraph">
-<p><strong>Incorrect forms</strong>:</p>
-</div>
-<div class="paragraph">
-<p><strong>See also</strong>: <a href="#aarch64">aarch64</a>, <a href="#arm64">arm64</a></p>
-</div>
 <h4 id="arm" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Azure Resource Manager (noun)</h4>
 <div class="paragraph">
 <p><strong>Description</strong>: In Microsoft Azure, the <em>Azure Resource Manager (ARM)</em> is a management mode that deploys, manages, and monitors resources in the Microsoft Azure portal. ARM mode is the default for Azure CLI 2.0. Microsoft Azure resources can be managed remotely from a Red Hat Enterprise Linux server. ARM replaces Azure Service Management (ASM) as the preferred mode for managing resources in Microsoft Azure.</p>
@@ -3362,7 +3541,7 @@ On first use, use "Basic HTTP authentication"; thereafter, use "Basic authentica
 </div>
 <h4 id="bimodal-it" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> bimodal IT (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: <em>Bimodal IT</em> is the Gartner phrase for the combination of traditional (mode 1 or type 1) and modern (mode 2 or type 2) IT infrastructure and resources. There are many ways to talk about this combination approach. Using only the Gartner term can alienate other analysts or those not familiar with Gartner&#8217;s phrasing.</p>
+<p><strong>Description</strong>: <em>Bimodal IT</em> is the <a href="https://www.gartner.com/en/glossary/all-terms">Gartner</a> phrase for the combination of traditional (mode 1 or type 1) and modern (mode 2 or type 2) IT infrastructure and resources. There are many ways to talk about this combination approach. Using only the Gartner term can alienate other analysts or those not familiar with Gartner&#8217;s phrasing.</p>
 </div>
 <div class="paragraph">
 <p>The practice of having both modes together is often referred to as <em>hybrid</em>, <em>agile</em>, or <em>modern</em> IT. "Hybrid IT" is a more general term; for example, it could mean <em>on-premise plus public cloud</em>. "Agile" and "modern IT" can both carry an implication of <em>mode 2</em>. When using those terms, be specific about the exact technology combination you mean.</p>
@@ -4008,7 +4187,7 @@ On first use, use "Basic HTTP authentication"; thereafter, use "Basic authentica
 </div>
 <h4 id="ceph-ansible" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> ceph-ansible (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: In Red Hat Ceph Storage, <code>ceph-ansible</code> is a utility that provides Ansible playbooks for installing, managing, and upgrading the Ceph Storage Cluster. Always mark it correctly (<code>ceph-ansible</code>).</p>
+<p><strong>Description</strong>: In Red Hat Ceph Storage, <code>ceph-ansible</code> is a utility that provides Ansible Playbooks for installing, managing, and upgrading the Ceph Storage Cluster. Always mark it correctly: <code>ceph-ansible</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Use it</strong>: yes</p>
@@ -4344,6 +4523,19 @@ On first use, use "Basic HTTP authentication"; thereafter, use "Basic authentica
 <div class="paragraph">
 <p><strong>See also</strong>:</p>
 </div>
+<h4 id="codebase" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> codebase (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: A <em>codebase</em> is a complete collection of source code for a software component, application, or system. Write as shown: one word.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: code base</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>:</p>
+</div>
 <h4 id="collect" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> collect (verb)</h4>
 <div class="paragraph">
 <p><strong>Description</strong>: In Red Hat Virtualization, use "collect" when discussing the log collector (<code>ovirt-log-collector</code>). Do not use "gather", which is reserved for discussing Red Hat Virtualization metrics. For the discussion regarding this decision, see the comments in <a href="https://bugzilla.redhat.com/show_bug.cgi?id=1418659">BZ#1418659 Add fluentd configuration for parsing engine.log</a>.</p>
@@ -4673,7 +4865,7 @@ image repository contains one or more tagged images.</p>
 </div>
 <h4 id="control-node" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> control node (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: Any machine with Ansible installed. You can run commands and playbooks, invoking /usr/bin/ansible or /usr/bin/ansible-playbook, from any <em>control node</em>. You can use any computer that has Python installed on it as a control node - laptops, shared desktops, and servers can all run Ansible. However, you cannot use a Windows machine as a control node. You can have multiple control nodes.</p>
+<p><strong>Description</strong>: Any machine with Ansible installed. You can run commands and playbooks, invoking <code>/usr/bin/ansible</code> or <code>/usr/bin/ansible-playbook</code>, from any <em>control node</em>. You can have multiple control nodes. You can use any computer that has Python installed on it as a control node: laptops, shared desktops, and servers can all run Ansible. However, you cannot use a Windows machine as a control node.</p>
 </div>
 <div class="paragraph">
 <p><strong>Use it</strong>: yes</p>
@@ -4682,7 +4874,7 @@ image repository contains one or more tagged images.</p>
 <p><strong>Incorrect forms</strong>:</p>
 </div>
 <div class="paragraph">
-<p><strong>See also</strong>: <a href="#ansible-playbook">Ansible playbook</a></p>
+<p><strong>See also</strong>: <a href="#ansible-playbook">Ansible Playbook</a></p>
 </div>
 <h4 id="control-plane" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> control plane (noun)</h4>
 <div class="paragraph">
@@ -5831,6 +6023,38 @@ Red Hat Directory Server conforms to LDAP standards.</p>
 </div>
 <div class="paragraph">
 <p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>:</p>
+</div>
+<h4 id="elb" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Elastic Load Balancing (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: <em>Elastic Load Balancing (ELB)</em> automatically distributes incoming traffic across multiple targets, such as Amazon Elastic Container Service (ECS) instances, and IP addresses in one or more Availability Zones (AZs). ELB supports the following load balancers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Application Load Balancer</p>
+</li>
+<li>
+<p>Classic Load Balancer</p>
+</li>
+<li>
+<p>Gateway Load Balancer</p>
+</li>
+<li>
+<p>Network Load Balancer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Do not abbreviate any of the previously listed load balancer terms.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: Elastic Load Balancer</p>
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>:</p>
@@ -11765,6 +11989,19 @@ Use "privilege" in the context of system actions and the abilities of an agent, 
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#jboss-amq">AMQ</a>, <a href="#jboss-amq-eap">JBoss AMQ</a></p>
 </div>
+<h4 id="red-hat-build-openjdk" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Red Hat build of OpenJDK (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: <em>Red Hat build of OpenJDK</em> is the Red Hat distribution of the Open Java Development Kit (OpenJDK).</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: yes</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: Red Hat Java, Red Hat OpenJDK, RHOJDK</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#red-hat-java">Red Hat Java</a>, <a href="#red-hat-openjdk">Red Hat OpenJDK</a></p>
+</div>
 <h4 id="red-hat-ceph-storage" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Red Hat Ceph Storage (noun)</h4>
 <div class="paragraph">
 <p><strong>Description</strong>: <em>Red Hat Ceph Storage</em> is a Red Hat offering of the Ceph storage system.</p>
@@ -11954,6 +12191,25 @@ Use "privilege" in the context of system actions and the abilities of an agent, 
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#syndesis">Syndesis</a>, <a href="#fuse-online">Fuse Online</a></p>
 </div>
+<h4 id="red-hat-java" class="discrete"><span class="image"><img src="images/no.png" alt="no"></span> Red Hat Java (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: Do not use <em>Red Hat Java</em> to refer to the Red Hat distribution of the Open Java Development Kit (OpenJDK).</p>
+</div>
+<div class="paragraph">
+<p>Java is a registered trademark of Oracle and its affiliates.</p>
+</div>
+<div class="paragraph">
+<p>Always use the approved product name <em>Red Hat build of OpenJDK</em> instead.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: no</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#red-hat-build-openjdk">Red Hat build of OpenJDK</a>, <a href="#red-hat-openjdk">Red Hat OpenJDK</a></p>
+</div>
 <h4 id="bpms" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Red Hat JBoss BPM Suite (noun)</h4>
 <div class="paragraph">
 <p><strong>Description</strong>: <em>Red Hat JBoss BPM Suite</em> is the JBoss platform for Business Process Management (BPM). The Red Hat JBoss BPM Suite enables enterprise business and IT users to document, simulate, manage, automate, and monitor business processes and policies. It is designed to empower business and IT users to collaborate more effectively, so business applications can be changed more easily and quickly.</p>
@@ -12031,6 +12287,25 @@ Use "privilege" in the context of system actions and the abilities of an agent, 
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#red-hat-network-satellite-server">Red Hat Network Satellite Server</a></p>
+</div>
+<h4 id="red-hat-openjdk" class="discrete"><span class="image"><img src="images/no.png" alt="no"></span> Red Hat OpenJDK (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: Do not use <em>Red Hat OpenJDK</em> to refer to the Red Hat distribution of the Open Java Development Kit (OpenJDK).</p>
+</div>
+<div class="paragraph">
+<p>OpenJDK is a registered trademark of Oracle and its affiliates.</p>
+</div>
+<div class="paragraph">
+<p>Always use the approved product name <em>Red Hat build of OpenJDK</em> instead.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: no</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>:</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#red-hat-build-openjdk">Red Hat build of OpenJDK</a>, <a href="#red-hat-java">Red Hat Java</a></p>
 </div>
 <h4 id="red-hat-openshift-cluster-manager" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> Red Hat OpenShift Cluster Manager (noun)</h4>
 <div class="paragraph">
@@ -13496,6 +13771,52 @@ IdM uses two types of replication agreements: <em>domain replication</em> agreem
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>:</p>
+</div>
+<h4 id="sos-report" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> sos report (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: In RHEL 8 and later, an <em>sos report</em> is a collection of files that contain configuration details, system information, and diagnostic data.
+Red&#160;Hat Support engineers review an sos report when troubleshooting system problems.
+To generate the sos report, customers run the <code>sos report</code> command; that is, the <code>sos</code> command with the <code>report</code> argument.</p>
+</div>
+<div class="paragraph">
+<p>Write as shown: two words.
+(In RHEL 7 and earlier, use the one-word term <em>sosreport</em> instead of <em>sos report</em>.)</p>
+</div>
+<div class="paragraph">
+<p>The <code>sos</code> in the command name is an acronym for "son of sysreport", and the official pronunciation is "ess-oh-ess".
+Therefore, if you need to use the indefinite article before "sos report", use <em>an</em> not <em>a</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: with caution</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: sosreport, SoSreport, SOSreport, SOSREPORT, SoS report, SOS report, sos Report, SoS Report, SOS Report, SOS REPORT</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#sosreport">sosreport</a></p>
+</div>
+<h4 id="sosreport" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> sosreport (noun)</h4>
+<div class="paragraph">
+<p><strong>Description</strong>: In RHEL 7 and earlier, an <em>sosreport</em> is a collection of files that contain configuration details, system information, and diagnostic data.
+Red&#160;Hat Support engineers review an sosreport when troubleshooting system problems.
+To generate the sosreport, customers run the <code>sosreport</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Write as shown: one word.
+(In RHEL 8 and later, use the two-word term <em>sos report</em> instead of <em>sosreport</em>.)</p>
+</div>
+<div class="paragraph">
+<p>The <code>sos</code> in the command name is an acronym for "son of sysreport", and the official pronunciation is "ess-oh-ess".
+Therefore, if you need to use the indefinite article before "sosreport", use <em>an</em> not <em>a</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Use it</strong>: with caution</p>
+</div>
+<div class="paragraph">
+<p><strong>Incorrect forms</strong>: SoSreport, SOSreport, SOSREPORT, sos report, SoS report, SOS report, sos Report, SoS Report, SOS Report, SOS REPORT</p>
+</div>
+<div class="paragraph">
+<p><strong>See also</strong>: <a href="#sos-report">sos report</a></p>
 </div>
 <h4 id="sound-card" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> sound card (noun)</h4>
 <div class="paragraph">
@@ -15495,7 +15816,7 @@ You can use a TGT to request further access, and provide the user with a Single 
 </div>
 <h4 id="x86_64" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> x86_64 (noun)</h4>
 <div class="paragraph">
-<p><strong>Description</strong>: A 64-bit version of the x86 architecture. Use this term when referring to operating systems and server instances, for example RHEL, Fedora, CoreOS and other linux distributions. Use this format without backticks in general cases when referring to system architecture. Use this format in backticks when referring to architecture as a value or parameter.</p>
+<p><strong>Description</strong>: A 64-bit version of the x86 architecture. Use this term when referring to operating systems and server instances, for example RHEL, Fedora, CoreOS and other Linux distributions. Use this format without backticks in general cases when referring to system architecture. Use this format in backticks when referring to architecture as a value or parameter.</p>
 </div>
 <div class="paragraph">
 <p>Cloud providers can use different formats of this term when using architectures. If you are documenting hard code, commands or outputs, confer with your SME on the correct format for the specific use case.</p>
@@ -15521,35 +15842,6 @@ You can use a TGT to request further access, and provide the user with a Single 
 </div>
 <div class="paragraph">
 <p><strong>See also</strong>: <a href="#bit-64-x86">64-bit x86</a></p>
-</div>
-<h4 id="bit-64-x86" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> 64-bit x86 (noun)</h4>
-<div class="paragraph">
-<p><strong>Description</strong>: A 64-bit version of the x86 architecture. This term can refer to both x86_64 and AMD64/<code>amd64</code>. Use this format in general cases when writing for both names of the architectures for various cloud providers.</p>
-</div>
-<div class="paragraph">
-<p>Cloud providers can use different formats of this term when using architectures. If you are documenting hard code, commands or outputs, confer with your SME on the correct format for the specific use case.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><em>Amazon Web Service (AWS) on 64-bit x86 systems</em></p>
-</li>
-<li>
-<p><em>Machine types for Azure on 64-bit x86 infrastructures</em></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Use it</strong>: yes</p>
-</div>
-<div class="paragraph">
-<p><strong>Incorrect forms</strong>: x64, x86-64, or x86</p>
-</div>
-<div class="paragraph">
-<p><strong>See also</strong>: <a href="#x86_64">x86_64</a></p>
 </div>
 <h4 id="xemacs" class="discrete"><span class="image"><img src="images/yes.png" alt="yes"></span> XEmacs (noun)</h4>
 <div class="paragraph">
@@ -15701,54 +15993,12 @@ You can use a TGT to request further access, and provide the user with a Single 
 <p><strong>See also</strong>: <a href="#ibm-z">IBM Z</a>, <a href="#ibm-s-390">IBM S/390</a></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_symbols">Symbols</h3>
-<h4 id="_ampersand" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> ampersand (&amp;)</h4>
-<div id="ampersand" class="paragraph">
-<p><strong>Description</strong>: Ampersands ("&amp;") can be used in design elements and graphics when space is limited and when either referring to or quoting third-party content that uses them. Do not use an ampersand in original body copy.</p>
-</div>
-<div class="paragraph">
-<p><strong>Use it</strong>: with caution</p>
-</div>
-<div class="paragraph">
-<p><strong>Incorrect forms</strong>:</p>
-</div>
-<div class="paragraph">
-<p><strong>See also</strong>:</p>
-</div>
-<h4 id="_exclamation_point" class="discrete"><span class="image"><img src="images/no.png" alt="no"></span> exclamation point (!)</h4>
-<div id="exclamation-point" class="paragraph">
-<p><strong>Description</strong>: Do not use exclamation points ("!") at the end of sentences. An exclamation point can be used when referring to a command, such as the bang (!) command.</p>
-</div>
-<div class="paragraph">
-<p><strong>Use it</strong>: no</p>
-</div>
-<div class="paragraph">
-<p><strong>Incorrect forms</strong>:</p>
-</div>
-<div class="paragraph">
-<p><strong>See also</strong>:</p>
-</div>
-<h4 id="_plus_symbol" class="discrete"><span class="image"><img src="images/caution.png" alt="with caution"></span> plus symbol (+)</h4>
-<div id="plus-symbol" class="paragraph">
-<p><strong>Description</strong>: Plus symbols ("+") can be used in design elements and graphics when space is limited and when either referring to or quoting third-party content that uses them. Do not use a plus symbol in original body copy.</p>
-</div>
-<div class="paragraph">
-<p><strong>Use it</strong>: with caution</p>
-</div>
-<div class="paragraph">
-<p><strong>Incorrect forms</strong>:</p>
-</div>
-<div class="paragraph">
-<p><strong>See also</strong>:</p>
-</div>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-13 10:34:29 +0100
+Last updated 2023-06-29 09:41:00 +0100
 </div>
 </div>
 </body>
