@@ -12,7 +12,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   
-  <title>Installing a cluster on vSphere with user-provisioned infrastructure - Installing on vSphere | Installing | OpenShift Container Platform Branch Build</title>
+  <title>Installing a cluster on vSphere in a restricted network with user-provisioned infrastructure - Installing on vSphere | Installing | OpenShift Container Platform Branch Build</title>
   <link href="https://assets.openshift.net/content/subdomain.css" rel="stylesheet" type="text/css"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/search.css" rel="stylesheet" media="screen"/>
   <link href="https://docs.openshift.com/container-platform/4.1/_stylesheets/autumn.css" rel="stylesheet"  media="screen"/>
@@ -204,13 +204,13 @@
       <li class="hidden-xs active"><a href="../../installing/installing_vsphere/preparing-to-install-on-vsphere.html">Installing on vSphere</a></li>
       
       <li class="hidden-xs active">
-        Installing a cluster on vSphere with user-provisioned infrastructure
+        Installing a cluster on vSphere in a restricted network with user-provisioned infrastructure
       </li>
       
       <span text-align="right" style="float: right !important">
-        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_vsphere/installing-vsphere.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
+        <a href="https://github.com/openshift/openshift-docs/commits/enterprise-Branch Build/installing/installing_vsphere/installing-restricted-networks-vsphere.adoc"><span class="material-icons-outlined" title="Page history">history</span></a>
         
-        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_vsphere/installing-vsphere.adoc">
+        <a href="https://github.com/openshift/openshift-docs/issues/new?title=[enterprise-Branch Build] Issue in file installing/installing_vsphere/installing-restricted-networks-vsphere.adoc">
           <span class="material-icons-outlined" title="Open an issue">bug_report</span>
         </a>
         <a href="javascript: void(0);" onclick="window.print()"><span class="material-icons-outlined" title="Print page (Save as PDF)">picture_as_pdf</span></a>
@@ -3682,7 +3682,7 @@
 
 
                   <li>
-                    <a class=" active" href="../../installing/installing_vsphere/installing-vsphere.html">
+                    <a class="" href="../../installing/installing_vsphere/installing-vsphere.html">
                       Installing a cluster on vSphere with user-provisioned infrastructure
                     </a>
                   </li>
@@ -3754,7 +3754,7 @@
 
 
                   <li>
-                    <a class="" href="../../installing/installing_vsphere/installing-restricted-networks-vsphere.html">
+                    <a class=" active" href="../../installing/installing_vsphere/installing-restricted-networks-vsphere.html">
                       Installing a cluster on vSphere in a restricted network with user-provisioned infrastructure
                     </a>
                   </li>
@@ -31506,7 +31506,7 @@
       <div class="col-xs-12 col-sm-9 col-md-9 main">
         <div class="page-header">
           <h1>
-            Installing a cluster on vSphere with user-provisioned infrastructure
+            Installing a cluster on vSphere in a restricted network with user-provisioned infrastructure
           </h1>
         </div>
         
@@ -31517,55 +31517,59 @@
 <div id="toctitle" class="title"></div>
 <ul class="sectlevel1">
 <li><a href="#prerequisites">Prerequisites</a></li>
-<li><a href="#cluster-entitlements_installing-vsphere">Internet access for OpenShift Container Platform</a></li>
-<li><a href="#installation-vsphere-infrastructure_installing-vsphere">VMware vSphere infrastructure requirements</a></li>
-<li><a href="#vsphere-csi-driver-reqs_installing-vsphere">VMware vSphere CSI Driver Operator requirements</a></li>
-<li><a href="#installation-requirements-user-infra_installing-vsphere">Requirements for a cluster with user-provisioned infrastructure</a>
+<li><a href="#installation-about-restricted-networks_installing-restricted-networks-vsphere">About installations in restricted networks</a>
 <ul class="sectlevel2">
-<li><a href="#installation-machine-requirements_installing-vsphere">Required machines for cluster installation</a></li>
-<li><a href="#installation-minimum-resource-requirements_installing-vsphere">Minimum resource requirements for cluster installation</a></li>
-<li><a href="#csr-management_installing-vsphere">Certificate signing requests management</a></li>
-<li><a href="#installation-network-user-infra_installing-vsphere">Networking requirements for user-provisioned infrastructure</a></li>
-<li><a href="#installation-dns-user-infra_installing-vsphere">User-provisioned DNS requirements</a></li>
-<li><a href="#installation-load-balancing-user-infra_installing-vsphere">Load balancing requirements for user-provisioned infrastructure</a></li>
+<li><a href="#installation-restricted-network-limits_installing-restricted-networks-vsphere">Additional limits</a></li>
 </ul>
 </li>
-<li><a href="#installation-infrastructure-user-infra_installing-vsphere">Preparing the user-provisioned infrastructure</a></li>
-<li><a href="#installation-user-provisioned-validating-dns_installing-vsphere">Validating DNS resolution for user-provisioned infrastructure</a></li>
-<li><a href="#ssh-agent-using_installing-vsphere">Generating a key pair for cluster node SSH access</a></li>
-<li><a href="#installation-obtaining-installer_installing-vsphere">Obtaining the installation program</a></li>
-<li><a href="#installation-initializing-manual_installing-vsphere">Manually creating the installation configuration file</a>
+<li><a href="#cluster-entitlements_installing-restricted-networks-vsphere">Internet access for OpenShift Container Platform</a></li>
+<li><a href="#installation-vsphere-infrastructure_installing-restricted-networks-vsphere">VMware vSphere infrastructure requirements</a></li>
+<li><a href="#vsphere-csi-driver-reqs_installing-restricted-networks-vsphere">VMware vSphere CSI Driver Operator requirements</a></li>
+<li><a href="#installation-requirements-user-infra_installing-restricted-networks-vsphere">Requirements for a cluster with user-provisioned infrastructure</a>
 <ul class="sectlevel2">
-<li><a href="#installation-vsphere-config-yaml_installing-vsphere">Sample <code>install-config.yaml</code> file for VMware vSphere</a></li>
-<li><a href="#installation-configure-proxy_installing-vsphere">Configuring the cluster-wide proxy during installation</a></li>
+<li><a href="#installation-machine-requirements_installing-restricted-networks-vsphere">Required machines for cluster installation</a></li>
+<li><a href="#installation-minimum-resource-requirements_installing-restricted-networks-vsphere">Minimum resource requirements for cluster installation</a></li>
+<li><a href="#csr-management_installing-restricted-networks-vsphere">Certificate signing requests management</a></li>
+<li><a href="#installation-network-user-infra_installing-restricted-networks-vsphere">Networking requirements for user-provisioned infrastructure</a></li>
+<li><a href="#installation-dns-user-infra_installing-restricted-networks-vsphere">User-provisioned DNS requirements</a></li>
+<li><a href="#installation-load-balancing-user-infra_installing-restricted-networks-vsphere">Load balancing requirements for user-provisioned infrastructure</a></li>
 </ul>
 </li>
-<li><a href="#installation-user-infra-generate-k8s-manifest-ignition_installing-vsphere">Creating the Kubernetes manifest and Ignition config files</a></li>
-<li><a href="#installation-extracting-infraid_installing-vsphere">Extracting the infrastructure name</a></li>
-<li><a href="#installation-vsphere-machines_installing-vsphere">Installing RHCOS and starting the OpenShift Container Platform bootstrap process</a></li>
-<li><a href="#machine-vsphere-machines_installing-vsphere">Adding more compute machines to a cluster in vSphere</a></li>
-<li><a href="#installation-disk-partitioning_installing-vsphere">Disk partitioning</a></li>
-<li><a href="#architecture-rhcos-updating-bootloader.adoc_installing-vsphere">Updating the bootloader using bootupd</a></li>
-<li><a href="#cli-installing-cli_installing-vsphere">Installing the OpenShift CLI by downloading the binary</a></li>
-<li><a href="#installation-installing-bare-metal_installing-vsphere">Waiting for the bootstrap process to complete</a></li>
-<li><a href="#cli-logging-in-kubeadmin_installing-vsphere">Logging in to the cluster by using the CLI</a></li>
-<li><a href="#installation-approve-csrs_installing-vsphere">Approving the certificate signing requests for your machines</a></li>
-<li><a href="#installation-operators-config_installing-vsphere">Initial Operator configuration</a>
+<li><a href="#installation-infrastructure-user-infra_installing-restricted-networks-vsphere">Preparing the user-provisioned infrastructure</a></li>
+<li><a href="#installation-user-provisioned-validating-dns_installing-restricted-networks-vsphere">Validating DNS resolution for user-provisioned infrastructure</a></li>
+<li><a href="#ssh-agent-using_installing-restricted-networks-vsphere">Generating a key pair for cluster node SSH access</a></li>
+<li><a href="#installation-initializing-manual_installing-restricted-networks-vsphere">Manually creating the installation configuration file</a>
 <ul class="sectlevel2">
-<li><a href="#registry-removed_installing-vsphere">Image registry removed during installation</a></li>
-<li><a href="#installation-registry-storage-config_installing-vsphere">Image registry storage configuration</a></li>
+<li><a href="#installation-vsphere-config-yaml_installing-restricted-networks-vsphere">Sample <code>install-config.yaml</code> file for VMware vSphere</a></li>
+<li><a href="#installation-configure-proxy_installing-restricted-networks-vsphere">Configuring the cluster-wide proxy during installation</a></li>
 </ul>
 </li>
-<li><a href="#installation-complete-user-infra_installing-vsphere">Completing installation on user-provisioned infrastructure</a></li>
-<li><a href="#anti-affinity-vsphere_installing-vsphere">Configuring vSphere DRS anti-affinity rules for control plane nodes</a></li>
-<li><a href="#vsphere-pv-backup_installing-vsphere">Backing up VMware vSphere volumes</a></li>
-<li><a href="#cluster-telemetry_installing-vsphere">Telemetry access for OpenShift Container Platform</a></li>
+<li><a href="#installation-user-infra-generate-k8s-manifest-ignition_installing-restricted-networks-vsphere">Creating the Kubernetes manifest and Ignition config files</a></li>
+<li><a href="#installation-special-config-chrony_installing-restricted-networks-vsphere">Configuring chrony time service</a></li>
+<li><a href="#installation-extracting-infraid_installing-restricted-networks-vsphere">Extracting the infrastructure name</a></li>
+<li><a href="#installation-vsphere-machines_installing-restricted-networks-vsphere">Installing RHCOS and starting the OpenShift Container Platform bootstrap process</a></li>
+<li><a href="#machine-vsphere-machines_installing-restricted-networks-vsphere">Adding more compute machines to a cluster in vSphere</a></li>
+<li><a href="#installation-disk-partitioning_installing-restricted-networks-vsphere">Disk partitioning</a></li>
+<li><a href="#architecture-rhcos-updating-bootloader.adoc_installing-restricted-networks-vsphere">Updating the bootloader using bootupd</a></li>
+<li><a href="#installation-installing-bare-metal_installing-restricted-networks-vsphere">Waiting for the bootstrap process to complete</a></li>
+<li><a href="#cli-logging-in-kubeadmin_installing-restricted-networks-vsphere">Logging in to the cluster by using the CLI</a></li>
+<li><a href="#installation-approve-csrs_installing-restricted-networks-vsphere">Approving the certificate signing requests for your machines</a></li>
+<li><a href="#installation-operators-config_installing-restricted-networks-vsphere">Initial Operator configuration</a>
+<ul class="sectlevel2">
+<li><a href="#olm-restricted-networks-operatorhub_installing-restricted-networks-vsphere">Disabling the default OperatorHub sources</a></li>
+<li><a href="#installation-registry-storage-config_installing-restricted-networks-vsphere">Image registry storage configuration</a></li>
+</ul>
+</li>
+<li><a href="#installation-complete-user-infra_installing-restricted-networks-vsphere">Completing installation on user-provisioned infrastructure</a></li>
+<li><a href="#anti-affinity-vsphere_installing-restricted-networks-vsphere">Configuring vSphere DRS anti-affinity rules for control plane nodes</a></li>
+<li><a href="#vsphere-pv-backup_installing-restricted-networks-vsphere">Backing up VMware vSphere volumes</a></li>
+<li><a href="#cluster-telemetry_installing-restricted-networks-vsphere">Telemetry access for OpenShift Container Platform</a></li>
 <li><a href="#next-steps">Next steps</a></li>
 </ul>
 </div>
 <div class="paragraph">
 <p>In OpenShift Container Platform version Branch Build, you can install a cluster on
-VMware vSphere infrastructure that you provision.</p>
+VMware vSphere infrastructure that you provision in a restricted network.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -31609,7 +31613,25 @@ VMware vSphere infrastructure that you provision.</p>
 <p>You read the documentation on <a href="../../installing/installing-preparing.html#installing-preparing">selecting a cluster installation method and preparing it for users</a>.</p>
 </li>
 <li>
-<p>You provisioned <a href="../../storage/understanding-persistent-storage.html#understanding-persistent-storage">persistent storage</a> for your cluster. To deploy a private image registry, your storage must provide <code>ReadWriteMany</code> access modes.</p>
+<p>You <a href="../../installing/disconnected_install/installing-mirroring-installation-images.html#installing-mirroring-installation-images">created a registry on your mirror host</a> and obtained the <code>imageContentSources</code> data for your version of OpenShift Container Platform.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Because the installation media is on the mirror host, you can use that computer to complete all installation steps.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>You provisioned <a href="../../storage/understanding-persistent-storage.html#understanding-persistent-storage">persistent storage</a> for your cluster. To deploy a private image registry, your storage must provide
+<code>ReadWriteMany</code> access modes.</p>
 </li>
 <li>
 <p>Completing the installation requires that you upload the Red Hat Enterprise Linux CoreOS (RHCOS) OVA on vSphere hosts. The machine from which you complete this process requires access to port 443 on the vCenter and ESXi hosts. You verified that port 443 is accessible.</p>
@@ -31618,7 +31640,7 @@ VMware vSphere infrastructure that you provision.</p>
 <p>If you use a firewall, you confirmed with the administrator that port 443 is accessible. Control plane nodes must be able to reach vCenter and ESXi hosts on port 443 for the installation to succeed.</p>
 </li>
 <li>
-<p>If you use a firewall, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured it to allow the sites</a> that your cluster requires access to.</p>
+<p>If you use a firewall and plan to use the Telemetry service, you <a href="../../installing/install_config/configuring-firewall.html#configuring-firewall">configured the firewall to allow the sites</a> that your cluster requires access to.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -31639,11 +31661,66 @@ VMware vSphere infrastructure that you provision.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-entitlements_installing-vsphere"><a class="anchor" href="#cluster-entitlements_installing-vsphere"></a>Internet access for OpenShift Container Platform</h2>
+<h2 id="installation-about-restricted-networks_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-about-restricted-networks_installing-restricted-networks-vsphere"></a>About installations in restricted networks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In OpenShift Container Platform Branch Build, you can perform an installation that does not
+require an active connection to the internet to obtain software components. Restricted network installations can be completed using installer-provisioned infrastructure or user-provisioned infrastructure, depending on the cloud platform to which you are installing the cluster.</p>
+</div>
+<div class="paragraph">
+<p>If you choose to perform a restricted network installation on a cloud platform, you
+still require access to its cloud APIs. Some cloud functions, like
+Amazon Web Service&#8217;s Route 53 DNS and IAM services, require internet access.
+Depending on your network, you might require less internet
+access for an installation on bare metal hardware or on VMware vSphere.</p>
+</div>
+<div class="paragraph">
+<p>To complete a restricted network installation, you must create a registry that
+mirrors the contents of the OpenShift image registry and contains the
+installation media. You can create this registry on a mirror host, which can
+access both the internet and your closed network, or by using other methods
+that meet your restrictions.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Because of the complexity of the configuration for user-provisioned installations, consider completing a standard user-provisioned infrastructure installation before you attempt a restricted network installation using user-provisioned infrastructure. Completing this test installation might make it easier to isolate and troubleshoot any issues that might arise during your installation in a restricted network.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="installation-restricted-network-limits_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-restricted-network-limits_installing-restricted-networks-vsphere"></a>Additional limits</h3>
+<div class="paragraph">
+<p>Clusters in restricted networks have the following additional limitations and restrictions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>ClusterVersion</code> status includes an <code>Unable to retrieve available updates</code>
+error.</p>
+</li>
+<li>
+<p>By default, you cannot use the contents of the Developer Catalog because
+you cannot access the required image stream tags.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="cluster-entitlements_installing-restricted-networks-vsphere"><a class="anchor" href="#cluster-entitlements_installing-restricted-networks-vsphere"></a>Internet access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, you require access to the internet to
-install
+obtain the images that are necessary to install
 your cluster.</p>
 </div>
 <div class="paragraph">
@@ -31679,7 +31756,7 @@ your cluster.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-vsphere-infrastructure_installing-vsphere"><a class="anchor" href="#installation-vsphere-infrastructure_installing-vsphere"></a>VMware vSphere infrastructure requirements</h2>
+<h2 id="installation-vsphere-infrastructure_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-vsphere-infrastructure_installing-restricted-networks-vsphere"></a>VMware vSphere infrastructure requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You must install the OpenShift Container Platform cluster on a VMware vSphere version 7 instance that meets the requirements for the components that you use.</p>
@@ -31798,7 +31875,7 @@ you install OpenShift Container Platform.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vsphere-csi-driver-reqs_installing-vsphere"><a class="anchor" href="#vsphere-csi-driver-reqs_installing-vsphere"></a>VMware vSphere CSI Driver Operator requirements</h2>
+<h2 id="vsphere-csi-driver-reqs_installing-restricted-networks-vsphere"><a class="anchor" href="#vsphere-csi-driver-reqs_installing-restricted-networks-vsphere"></a>VMware vSphere CSI Driver Operator requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To install the vSphere CSI Driver Operator, the following requirements must be met:</p>
@@ -31853,7 +31930,7 @@ found existing unsupported csi.vsphere.vmware.com driver</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-requirements-user-infra_installing-vsphere"><a class="anchor" href="#installation-requirements-user-infra_installing-vsphere"></a>Requirements for a cluster with user-provisioned infrastructure</h2>
+<h2 id="installation-requirements-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-requirements-user-infra_installing-restricted-networks-vsphere"></a>Requirements for a cluster with user-provisioned infrastructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For a cluster that contains user-provisioned infrastructure, you must deploy all
@@ -31863,7 +31940,7 @@ of the required machines.</p>
 <p>This section describes the requirements for deploying OpenShift Container Platform on user-provisioned infrastructure.</p>
 </div>
 <div class="sect2">
-<h3 id="installation-machine-requirements_installing-vsphere"><a class="anchor" href="#installation-machine-requirements_installing-vsphere"></a>Required machines for cluster installation</h3>
+<h3 id="installation-machine-requirements_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-machine-requirements_installing-restricted-networks-vsphere"></a>Required machines for cluster installation</h3>
 <div class="paragraph">
 <p>The smallest OpenShift Container Platform clusters require the following hosts:</p>
 </div>
@@ -31920,7 +31997,7 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-minimum-resource-requirements_installing-vsphere"><a class="anchor" href="#installation-minimum-resource-requirements_installing-vsphere"></a>Minimum resource requirements for cluster installation</h3>
+<h3 id="installation-minimum-resource-requirements_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-minimum-resource-requirements_installing-restricted-networks-vsphere"></a>Minimum resource requirements for cluster installation</h3>
 <div class="paragraph">
 <p>Each cluster machine must meet the following minimum requirements:</p>
 </div>
@@ -31993,13 +32070,13 @@ See <a href="https://access.redhat.com/articles/rhel-limits">Red Hat Enterprise 
 </div>
 </div>
 <div class="sect2">
-<h3 id="csr-management_installing-vsphere"><a class="anchor" href="#csr-management_installing-vsphere"></a>Certificate signing requests management</h3>
+<h3 id="csr-management_installing-restricted-networks-vsphere"><a class="anchor" href="#csr-management_installing-restricted-networks-vsphere"></a>Certificate signing requests management</h3>
 <div class="paragraph">
 <p>Because your cluster has limited access to automatic machine management when you use infrastructure that you provision, you must provide a mechanism for approving cluster certificate signing requests (CSRs) after installation. The <code>kube-controller-manager</code> only approves the kubelet client CSRs. The <code>machine-approver</code> cannot guarantee the validity of a serving certificate that is requested by using kubelet credentials because it cannot confirm that the correct machine issued the request. You must determine and implement a method of verifying the validity of the kubelet serving certificate requests and approving them.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-network-user-infra_installing-vsphere"><a class="anchor" href="#installation-network-user-infra_installing-vsphere"></a>Networking requirements for user-provisioned infrastructure</h3>
+<h3 id="installation-network-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-network-user-infra_installing-restricted-networks-vsphere"></a>Networking requirements for user-provisioned infrastructure</h3>
 <div class="paragraph">
 <p>All the Red Hat Enterprise Linux CoreOS (RHCOS) machines require networking to be configured in <code>initramfs</code> during boot
 to fetch their Ignition config files.</p>
@@ -32032,7 +32109,7 @@ node names. Another supported approach is to always refer to hosts by their
 fully-qualified domain names in both the node objects and all DNS requests.</p>
 </div>
 <div class="sect3">
-<h4 id="installation-host-names-dhcp-user-infra_installing-vsphere"><a class="anchor" href="#installation-host-names-dhcp-user-infra_installing-vsphere"></a>Setting the cluster node hostnames through DHCP</h4>
+<h4 id="installation-host-names-dhcp-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-host-names-dhcp-user-infra_installing-restricted-networks-vsphere"></a>Setting the cluster node hostnames through DHCP</h4>
 <div class="paragraph">
 <p>On Red Hat Enterprise Linux CoreOS (RHCOS) machines, the hostname is set through NetworkManager. By default, the machines obtain their hostname through DHCP. If the hostname is not provided by DHCP, set statically through kernel arguments, or another method, it is obtained through a reverse DNS lookup. Reverse DNS lookup occurs after the network has been initialized on a node and can take time to resolve. Other system services can start prior to this and detect the hostname as <code>localhost</code> or similar. You can avoid this by using DHCP to provide the hostname for each cluster node.</p>
 </div>
@@ -32041,7 +32118,7 @@ fully-qualified domain names in both the node objects and all DNS requests.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="installation-network-connectivity-user-infra_installing-vsphere"><a class="anchor" href="#installation-network-connectivity-user-infra_installing-vsphere"></a>Network connectivity requirements</h4>
+<h4 id="installation-network-connectivity-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-network-connectivity-user-infra_installing-restricted-networks-vsphere"></a>Network connectivity requirements</h4>
 <div class="paragraph">
 <p>You must configure the network connectivity between machines to allow OpenShift Container Platform cluster
 components to communicate. Each machine must be able to resolve the hostnames
@@ -32294,7 +32371,7 @@ not succeed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-dns-user-infra_installing-vsphere"><a class="anchor" href="#installation-dns-user-infra_installing-vsphere"></a>User-provisioned DNS requirements</h3>
+<h3 id="installation-dns-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-dns-user-infra_installing-restricted-networks-vsphere"></a>User-provisioned DNS requirements</h3>
 <div class="paragraph">
 <p>In OpenShift Container Platform deployments, DNS name resolution is required for the following components:</p>
 </div>
@@ -32465,7 +32542,7 @@ for the worker nodes. These records must be resolvable by the nodes within the c
 </table>
 </div>
 <div class="sect3">
-<h4 id="installation-dns-user-infra-example_installing-vsphere"><a class="anchor" href="#installation-dns-user-infra-example_installing-vsphere"></a>Example DNS configuration for user-provisioned clusters</h4>
+<h4 id="installation-dns-user-infra-example_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-dns-user-infra-example_installing-restricted-networks-vsphere"></a>Example DNS configuration for user-provisioned clusters</h4>
 <div class="paragraph">
 <p>This section provides A and PTR record configuration samples that meet the DNS requirements for deploying OpenShift Container Platform on user-provisioned infrastructure. The samples are not meant to provide advice for choosing one DNS solution over another.</p>
 </div>
@@ -32635,7 +32712,7 @@ worker1.ocp4.example.com.	IN	A	192.168.1.7 <i class="conum" data-value="6"></i><
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-load-balancing-user-infra_installing-vsphere"><a class="anchor" href="#installation-load-balancing-user-infra_installing-vsphere"></a>Load balancing requirements for user-provisioned infrastructure</h3>
+<h3 id="installation-load-balancing-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-load-balancing-user-infra_installing-restricted-networks-vsphere"></a>Load balancing requirements for user-provisioned infrastructure</h3>
 <div class="paragraph">
 <p>Before you install OpenShift Container Platform, you must provision the API and application ingress load balancing infrastructure. In production scenarios, you can deploy the API and application ingress load balancers separately so that you can scale the load balancer infrastructure for each in isolation.</p>
 </div>
@@ -32838,7 +32915,7 @@ to become unhealthy, are well-tested values.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="installation-load-balancing-user-infra-example_installing-vsphere"><a class="anchor" href="#installation-load-balancing-user-infra-example_installing-vsphere"></a>Example load balancer configuration for user-provisioned clusters</h4>
+<h4 id="installation-load-balancing-user-infra-example_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-load-balancing-user-infra-example_installing-restricted-networks-vsphere"></a>Example load balancer configuration for user-provisioned clusters</h4>
 <div class="paragraph">
 <p>This section provides an example API and application ingress load balancer configuration that meets the load balancing requirements for user-provisioned clusters. The sample is an <code>/etc/haproxy/haproxy.cfg</code> configuration for an HAProxy load balancer. The example is not meant to provide advice for choosing one load balancing solution over another.</p>
 </div>
@@ -32971,7 +33048,7 @@ listen ingress-router-80 <i class="conum" data-value="5"></i><b>(5)</b>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-infrastructure-user-infra_installing-vsphere"><a class="anchor" href="#installation-infrastructure-user-infra_installing-vsphere"></a>Preparing the user-provisioned infrastructure</h2>
+<h2 id="installation-infrastructure-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-infrastructure-user-infra_installing-restricted-networks-vsphere"></a>Preparing the user-provisioned infrastructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before you install OpenShift Container Platform on user-provisioned infrastructure, you must prepare the underlying infrastructure.</p>
@@ -33118,7 +33195,7 @@ enabling the required ports through your firewall, and setting up the required D
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-user-provisioned-validating-dns_installing-vsphere"><a class="anchor" href="#installation-user-provisioned-validating-dns_installing-vsphere"></a>Validating DNS resolution for user-provisioned infrastructure</h2>
+<h2 id="installation-user-provisioned-validating-dns_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-user-provisioned-validating-dns_installing-restricted-networks-vsphere"></a>Validating DNS resolution for user-provisioned infrastructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can validate your DNS configuration before installing OpenShift Container Platform on user-provisioned infrastructure.</p>
@@ -33321,7 +33398,7 @@ enabling the required ports through your firewall, and setting up the required D
 </div>
 </div>
 <div class="sect1">
-<h2 id="ssh-agent-using_installing-vsphere"><a class="anchor" href="#ssh-agent-using_installing-vsphere"></a>Generating a key pair for cluster node SSH access</h2>
+<h2 id="ssh-agent-using_installing-restricted-networks-vsphere"><a class="anchor" href="#ssh-agent-using_installing-restricted-networks-vsphere"></a>Generating a key pair for cluster node SSH access</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>During an OpenShift Container Platform installation, you can provide an SSH public key to the installation program. The key is passed to the Red Hat Enterprise Linux CoreOS (RHCOS) nodes through their Ignition config files and is used to authenticate SSH access to the nodes. The key is added to the <code>~/.ssh/authorized_keys</code> list for the <code>core</code> user on each node, which enables password-less authentication.</p>
@@ -33496,78 +33573,7 @@ If you install a cluster on infrastructure that you provision, you must provide 
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-obtaining-installer_installing-vsphere"><a class="anchor" href="#installation-obtaining-installer_installing-vsphere"></a>Obtaining the installation program</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before you install OpenShift Container Platform, download the installation file on
- a local computer.</p>
-</div>
-<div class="ulist">
-<div class="title">Prerequisites</div>
-<ul>
-<li>
-<p>You have a computer that runs Linux or macOS, with 500 MB of local disk space</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Access the <a href="https://console.redhat.com/openshift/install">Infrastructure Provider</a> page on the OpenShift Cluster Manager site. If you have a Red Hat account, log in with your credentials. If you do not, create an account.</p>
-</li>
-<li>
-<p>Select your infrastructure provider.</p>
-</li>
-<li>
-<p>Navigate to the page for your installation type, download the installation program that corresponds with your host operating system and architecture, and place the file in the directory where you will store the installation configuration files.</p>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The installation program creates several files on the computer that you use to install your cluster. You must keep the installation program and the files that the installation program creates after you finish installing the cluster. Both files are required to delete the cluster.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Deleting the files created by the installation program does not remove your cluster, even if the cluster failed during installation. To remove your cluster, complete the OpenShift Container Platform uninstallation procedures for your specific cloud provider.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p>Extract the installation program. For example, on a computer that uses a Linux
-operating system, run the following command:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">tar</span> <span class="nt">-xvf</span> openshift-install-linux.tar.gz</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Download your installation <a href="https://console.redhat.com/openshift/install/pull-secret">pull secret from the Red Hat OpenShift Cluster Manager</a>. This pull secret allows you to authenticate with the services that are provided by the included authorities, including Quay.io, which serves the container images for OpenShift Container Platform components.</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-initializing-manual_installing-vsphere"><a class="anchor" href="#installation-initializing-manual_installing-vsphere"></a>Manually creating the installation configuration file</h2>
+<h2 id="installation-initializing-manual_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-initializing-manual_installing-restricted-networks-vsphere"></a>Manually creating the installation configuration file</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>For user-provisioned installations of OpenShift Container Platform, you manually generate your installation configuration file.</p>
@@ -33581,6 +33587,13 @@ operating system, run the following command:</p>
 <li>
 <p>You have obtained the OpenShift Container Platform installation program and the pull secret for your
 cluster.</p>
+</li>
+<li>
+<p>Obtain the <code>imageContentSources</code> section from the output of the command to
+mirror the repository.</p>
+</li>
+<li>
+<p>Obtain the contents of the certificate for your mirror registry.</p>
 </li>
 </ul>
 </div>
@@ -33631,6 +33644,17 @@ it in the <code>&lt;installation_directory&gt;</code>.</p>
 </tr>
 </table>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Unless you use a registry that RHCOS trusts by default, such as
+<code>docker.io</code>, you must provide the contents of the certificate for your mirror
+repository in the <code>additionalTrustBundle</code> section. In most cases, you must
+provide the certificate for your mirror.</p>
+</li>
+<li>
+<p>You must include the <code>imageContentSources</code> section from the output of the command to
+mirror the repository.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -33644,6 +33668,9 @@ it in the <code>&lt;installation_directory&gt;</code>.</p>
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ul>
 </div>
 </li>
 <li>
@@ -33668,7 +33695,7 @@ installation process. You must back it up now.</p>
 </ol>
 </div>
 <div class="sect2">
-<h3 id="installation-vsphere-config-yaml_installing-vsphere"><a class="anchor" href="#installation-vsphere-config-yaml_installing-vsphere"></a>Sample <code>install-config.yaml</code> file for VMware vSphere</h3>
+<h3 id="installation-vsphere-config-yaml_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-vsphere-config-yaml_installing-restricted-networks-vsphere"></a>Sample <code>install-config.yaml</code> file for VMware vSphere</h3>
 <div class="paragraph">
 <p>You can customize the <code>install-config.yaml</code> file to specify more details about
 your OpenShift Container Platform cluster&#8217;s platform or modify the values of the required
@@ -33699,8 +33726,19 @@ parameters.</p>
     <span class="na">resourcePool</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/&lt;datacenter_name&gt;/host/&lt;cluster_name&gt;/Resources/&lt;resource_pool_name&gt;"</span> <i class="conum" data-value="13"></i><b>(13)</b>
     <span class="na">diskType</span><span class="pi">:</span> <span class="s">thin</span> <i class="conum" data-value="14"></i><b>(14)</b>
 <span class="na">fips</span><span class="pi">:</span> <span class="no">false</span> <i class="conum" data-value="15"></i><b>(15)</b>
-<span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":</span><span class="nv"> </span><span class="s">...}'</span> <i class="conum" data-value="16"></i><b>(16)</b>
-<span class="na">sshKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ssh-ed25519</span><span class="nv"> </span><span class="s">AAAA...'</span> <i class="conum" data-value="17"></i><b>(17)</b></code></pre>
+<span class="na">pullSecret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">{"auths":{"&lt;local_registry&gt;":</span><span class="nv"> </span><span class="s">{"auth":</span><span class="nv"> </span><span class="s">"&lt;credentials&gt;","email":</span><span class="nv"> </span><span class="s">"you@example.com"}}}'</span> <i class="conum" data-value="16"></i><b>(16)</b>
+<span class="na">sshKey</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ssh-ed25519</span><span class="nv"> </span><span class="s">AAAA...'</span> <i class="conum" data-value="17"></i><b>(17)</b>
+<span class="na">additionalTrustBundle</span><span class="pi">:</span> <span class="pi">|</span> <i class="conum" data-value="18"></i><b>(18)</b>
+  <span class="s">-----BEGIN CERTIFICATE-----</span>
+  <span class="s">ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ</span>
+  <span class="s">-----END CERTIFICATE-----</span>
+<span class="na">imageContentSources</span><span class="pi">:</span> <i class="conum" data-value="19"></i><b>(19)</b>
+<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">&lt;local_registry&gt;/&lt;local_repository_name&gt;/release</span>
+  <span class="na">source</span><span class="pi">:</span> <span class="s">quay.io/openshift-release-dev/ocp-release</span>
+<span class="pi">-</span> <span class="na">mirrors</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">&lt;local_registry&gt;/&lt;local_repository_name&gt;/release</span>
+  <span class="na">source</span><span class="pi">:</span> <span class="s">quay.io/openshift-release-dev/ocp-v4.0-art-dev</span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -33819,18 +33857,45 @@ in vSphere.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="16"></i><b>16</b></td>
-<td>The pull secret that you obtained from <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a>. This pull secret allows you to authenticate with the services that are provided by the included authorities, including Quay.io, which serves the container images for OpenShift Container Platform components.</td>
+<td>For <code>&lt;local_registry&gt;</code>, specify the registry domain name, and optionally the
+port, that your mirror registry uses to serve content. For example
+<code>registry.example.com</code> or <code>registry.example.com:5000</code>. For <code>&lt;credentials&gt;</code>,
+specify the base64-encoded user name and password for your mirror registry.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="17"></i><b>17</b></td>
 <td>The public portion of the default SSH key for the <code>core</code> user in
-Red Hat Enterprise Linux CoreOS (RHCOS).</td>
+Red Hat Enterprise Linux CoreOS (RHCOS).
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For production OpenShift Container Platform clusters on which you want to perform installation debugging or disaster recovery, specify an SSH key that your <code>ssh-agent</code> process uses.</p>
+</div>
+</td>
+</tr>
+</table>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="18"></i><b>18</b></td>
+<td>Provide the contents of the certificate file that you used for your mirror
+registry.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="19"></i><b>19</b></td>
+<td>Provide the <code>imageContentSources</code> section from the output of the command to
+mirror the repository.</td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-configure-proxy_installing-vsphere"><a class="anchor" href="#installation-configure-proxy_installing-vsphere"></a>Configuring the cluster-wide proxy during installation</h3>
+<h3 id="installation-configure-proxy_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-configure-proxy_installing-restricted-networks-vsphere"></a>Configuring the cluster-wide proxy during installation</h3>
 <div class="paragraph">
 <p>Production environments can deny direct access to the internet and instead have
 an HTTP or HTTPS proxy available. You can configure a new OpenShift Container Platform
@@ -33978,7 +34043,7 @@ proxies can be created.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-user-infra-generate-k8s-manifest-ignition_installing-vsphere"><a class="anchor" href="#installation-user-infra-generate-k8s-manifest-ignition_installing-vsphere"></a>Creating the Kubernetes manifest and Ignition config files</h2>
+<h2 id="installation-user-infra-generate-k8s-manifest-ignition_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-user-infra-generate-k8s-manifest-ignition_installing-restricted-networks-vsphere"></a>Creating the Kubernetes manifest and Ignition config files</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Because you must modify some cluster definition files and manually start the cluster machines, you must generate the Kubernetes manifest and Ignition config files that the cluster needs to configure the machines.</p>
@@ -34011,7 +34076,8 @@ proxies can be created.</p>
 <div class="title">Prerequisites</div>
 <ul>
 <li>
-<p>You obtained the OpenShift Container Platform installation program.</p>
+<p>You obtained the OpenShift Container Platform installation program.
+For a restricted network installation, these files are on your mirror host.</p>
 </li>
 <li>
 <p>You created the <code>install-config.yaml</code> installation configuration file.</p>
@@ -34113,7 +34179,105 @@ to initialize them.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-extracting-infraid_installing-vsphere"><a class="anchor" href="#installation-extracting-infraid_installing-vsphere"></a>Extracting the infrastructure name</h2>
+<h2 id="installation-special-config-chrony_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-special-config-chrony_installing-restricted-networks-vsphere"></a>Configuring chrony time service</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You
+must
+set the time server and related settings used by the chrony time service (<code>chronyd</code>)
+by modifying the contents of the <code>chrony.conf</code> file and passing those contents
+to your nodes as a machine config.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>Create a Butane config including the contents of the <code>chrony.conf</code> file. For example, to configure chrony on worker nodes, create a <code>99-worker-chrony.bu</code> file.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>See "Creating machine configs with Butane" for information about Butane.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="yaml"><span class="na">variant</span><span class="pi">:</span> <span class="s">openshift</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s">4.10.0</span>
+<span class="na">metadata</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s">99-worker-chrony</span> <i class="conum" data-value="1"></i><b>(1)</b>
+  <span class="na">labels</span><span class="pi">:</span>
+    <span class="s">machineconfiguration.openshift.io/role</span><span class="pi">:</span> <span class="s">worker</span> <i class="conum" data-value="1"></i><b>(1)</b>
+<span class="na">storage</span><span class="pi">:</span>
+  <span class="na">files</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">path</span><span class="pi">:</span> <span class="s">/etc/chrony.conf</span>
+    <span class="na">mode</span><span class="pi">:</span> <span class="s">0644</span> <i class="conum" data-value="2"></i><b>(2)</b>
+    <span class="na">overwrite</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">contents</span><span class="pi">:</span>
+      <span class="na">inline</span><span class="pi">:</span> <span class="pi">|</span>
+        <span class="s">pool 0.rhel.pool.ntp.org iburst </span><i class="conum" data-value="3"></i><b>(3)</b>
+        <span class="s">driftfile /var/lib/chrony/drift</span>
+        <span class="s">makestep 1.0 3</span>
+        <span class="s">rtcsync</span>
+        <span class="s">logdir /var/log/chrony</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>On control plane nodes, substitute <code>master</code> for <code>worker</code> in both of these locations.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Specify an octal value mode for the <code>mode</code> field in the machine config file. After creating the file and applying the changes, the <code>mode</code> is converted to a decimal value. You can check the YAML file with the command <code>oc get mc &lt;mc-name&gt; -o yaml</code>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Specify any valid, reachable time source, such as the one provided by your DHCP server.</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Use Butane to generate a <code>MachineConfig</code> object file, <code>99-worker-chrony.yaml</code>, containing the configuration to be delivered to the nodes:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>butane 99-worker-chrony.bu <span class="nt">-o</span> 99-worker-chrony.yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Apply the configurations in one of two ways:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the cluster is not running yet, after you generate manifest files, add the <code>MachineConfig</code> object file to the <code>&lt;installation_directory&gt;/openshift</code> directory, and then continue to create the cluster.</p>
+</li>
+<li>
+<p>If the cluster is already running, apply the file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc apply <span class="nt">-f</span> ./99-worker-chrony.yaml</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-extracting-infraid_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-extracting-infraid_installing-restricted-networks-vsphere"></a>Extracting the infrastructure name</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Ignition config files contain a unique cluster identifier that you can use to
@@ -34174,7 +34338,7 @@ installation files in.</td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-vsphere-machines_installing-vsphere"><a class="anchor" href="#installation-vsphere-machines_installing-vsphere"></a>Installing RHCOS and starting the OpenShift Container Platform bootstrap process</h2>
+<h2 id="installation-vsphere-machines_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-vsphere-machines_installing-restricted-networks-vsphere"></a>Installing RHCOS and starting the OpenShift Container Platform bootstrap process</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To install OpenShift Container Platform on user-provisioned infrastructure on VMware vSphere, you must install Red Hat Enterprise Linux CoreOS (RHCOS) on vSphere hosts. When you install RHCOS, you must provide the Ignition config file that was generated by the OpenShift Container Platform installation program for the type of machine you are installing. If you have configured suitable networking, DNS, and load balancing infrastructure, the OpenShift Container Platform bootstrap process begins automatically after the RHCOS machines have rebooted.</p>
@@ -34558,7 +34722,7 @@ Ignition: user-provided config was applied</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="machine-vsphere-machines_installing-vsphere"><a class="anchor" href="#machine-vsphere-machines_installing-vsphere"></a>Adding more compute machines to a cluster in vSphere</h2>
+<h2 id="machine-vsphere-machines_installing-restricted-networks-vsphere"><a class="anchor" href="#machine-vsphere-machines_installing-restricted-networks-vsphere"></a>Adding more compute machines to a cluster in vSphere</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can add more compute machines to a user-provisioned OpenShift Container Platform cluster on VMware vSphere.</p>
@@ -34656,7 +34820,7 @@ Ignition: user-provided config was applied</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-disk-partitioning_installing-vsphere"><a class="anchor" href="#installation-disk-partitioning_installing-vsphere"></a>Disk partitioning</h2>
+<h2 id="installation-disk-partitioning_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-disk-partitioning_installing-restricted-networks-vsphere"></a>Disk partitioning</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In most cases, data partitions are originally created by installing RHCOS, rather than by installing another operating system. In such cases, the OpenShift Container Platform installer should be allowed to configure your disk partitions.</p>
@@ -34865,7 +35029,7 @@ preparation phases of an OpenShift Container Platform installation.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="architecture-rhcos-updating-bootloader.adoc_installing-vsphere"><a class="anchor" href="#architecture-rhcos-updating-bootloader.adoc_installing-vsphere"></a>Updating the bootloader using bootupd</h2>
+<h2 id="architecture-rhcos-updating-bootloader.adoc_installing-restricted-networks-vsphere"><a class="anchor" href="#architecture-rhcos-updating-bootloader.adoc_installing-restricted-networks-vsphere"></a>Updating the bootloader using bootupd</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To update the bootloader by using <code>bootupd</code>, you must either install <code>bootupd</code> on RHCOS machines manually or provide a machine config with the enabled <code>systemd</code> unit. Unlike <code>grubby</code> or other bootloader tools, <code>bootupd</code> does not manage kernel space configuration such as passing kernel arguments.</p>
@@ -34989,157 +35153,7 @@ preparation phases of an OpenShift Container Platform installation.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-installing-cli_installing-vsphere"><a class="anchor" href="#cli-installing-cli_installing-vsphere"></a>Installing the OpenShift CLI by downloading the binary</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) to interact with OpenShift Container Platform from a
-command-line interface. You can install <code>oc</code> on Linux, Windows, or macOS.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>If you installed an earlier version of <code>oc</code>, you cannot use it to complete all
-of the commands in OpenShift Container Platform Branch Build. Download and
-install the new version of <code>oc</code>.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<h3 id="installing-the-openshift-cli-on-linux" class="discrete">Installing the OpenShift CLI on Linux</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on Linux by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build Linux Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unpack the archive:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">tar </span>xvf &lt;file&gt;</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Place the <code>oc</code> binary in a directory that is on your <code>PATH</code>.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$PATH</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-<h3 id="installing-the-openshift-cli-on-windows" class="discrete">Installing the OpenShift CLI on Windows</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on Windows by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build Windows Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unzip the archive with a ZIP program.</p>
-</li>
-<li>
-<p>Move the <code>oc</code> binary to a directory that is on your <code>PATH</code>.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, open the command prompt and execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">C:\&gt;</span><span class="w"> </span>path</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">C:\&gt;</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-<h3 id="installing-the-openshift-cli-on-macos" class="discrete">Installing the OpenShift CLI on macOS</h3>
-<div class="paragraph">
-<p>You can install the OpenShift CLI (<code>oc</code>) binary on macOS by using the following procedure.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Procedure</div>
-<ol class="arabic">
-<li>
-<p>Navigate to the <a href="https://access.redhat.com/downloads/content/290">OpenShift Container Platform downloads page</a> on the Red Hat Customer Portal.</p>
-</li>
-<li>
-<p>Select the appropriate version in the <strong>Version</strong> drop-down menu.</p>
-</li>
-<li>
-<p>Click <strong>Download Now</strong> next to the <strong>OpenShift vBranch Build MacOSX Client</strong> entry and save the file.</p>
-</li>
-<li>
-<p>Unpack and unzip the archive.</p>
-</li>
-<li>
-<p>Move the <code>oc</code> binary to a directory on your PATH.</p>
-<div class="paragraph">
-<p>To check your <code>PATH</code>, open a terminal and execute the following command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span><span class="nb">echo</span> <span class="nv">$PATH</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>After you install the OpenShift CLI, it is available using the <code>oc</code> command:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc &lt;<span class="nb">command</span><span class="o">&gt;</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="installation-installing-bare-metal_installing-vsphere"><a class="anchor" href="#installation-installing-bare-metal_installing-vsphere"></a>Waiting for the bootstrap process to complete</h2>
+<h2 id="installation-installing-bare-metal_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-installing-bare-metal_installing-restricted-networks-vsphere"></a>Waiting for the bootstrap process to complete</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The OpenShift Container Platform bootstrap process begins after the cluster nodes first boot into the persistent RHCOS environment that has been installed to disk. The configuration information provided through the Ignition config files is used to initialize the bootstrap process and install OpenShift Container Platform on the machines. You must wait for the bootstrap process to complete.</p>
@@ -35158,9 +35172,6 @@ install the new version of <code>oc</code>.</p>
 </li>
 <li>
 <p>You installed RHCOS on your cluster machines and provided the Ignition config files that the OpenShift Container Platform installation program generated.</p>
-</li>
-<li>
-<p>Your machines have direct internet access or have an HTTP or HTTPS proxy available.</p>
 </li>
 </ul>
 </div>
@@ -35226,7 +35237,7 @@ can also remove or reformat the bootstrap machine itself.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cli-logging-in-kubeadmin_installing-vsphere"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-vsphere"></a>Logging in to the cluster by using the CLI</h2>
+<h2 id="cli-logging-in-kubeadmin_installing-restricted-networks-vsphere"><a class="anchor" href="#cli-logging-in-kubeadmin_installing-restricted-networks-vsphere"></a>Logging in to the cluster by using the CLI</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You can log in to your cluster as a default system user by exporting the cluster <code>kubeconfig</code> file.
@@ -35283,7 +35294,7 @@ the installation files in.</td>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-approve-csrs_installing-vsphere"><a class="anchor" href="#installation-approve-csrs_installing-vsphere"></a>Approving the certificate signing requests for your machines</h2>
+<h2 id="installation-approve-csrs_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-approve-csrs_installing-restricted-networks-vsphere"></a>Approving the certificate signing requests for your machines</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you add machines to a cluster, two pending certificate signing requests (CSRs) are generated for each machine that you added. You must confirm that these CSRs are approved or, if necessary, approve them yourself. The client requests must be approved first, followed by the server requests.</p>
@@ -35520,7 +35531,7 @@ worker-1  Ready     worker  11m  v1.23.0</span></code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-operators-config_installing-vsphere"><a class="anchor" href="#installation-operators-config_installing-vsphere"></a>Initial Operator configuration</h2>
+<h2 id="installation-operators-config_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-operators-config_installing-restricted-networks-vsphere"></a>Initial Operator configuration</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After the control plane initializes, you must immediately configure some
@@ -35588,16 +35599,42 @@ storage                                    4.10.0    True        False         F
 </ol>
 </div>
 <div class="sect2">
-<h3 id="registry-removed_installing-vsphere"><a class="anchor" href="#registry-removed_installing-vsphere"></a>Image registry removed during installation</h3>
+<h3 id="olm-restricted-networks-operatorhub_installing-restricted-networks-vsphere"><a class="anchor" href="#olm-restricted-networks-operatorhub_installing-restricted-networks-vsphere"></a>Disabling the default OperatorHub sources</h3>
 <div class="paragraph">
-<p>On platforms that do not provide shareable object storage, the OpenShift Image Registry Operator bootstraps itself as <code>Removed</code>. This allows <code>openshift-installer</code> to complete installations on these platform types.</p>
+<p>Operator catalogs that source content provided by Red Hat and community projects are configured for OperatorHub by default during an OpenShift Container Platform installation.
+In a restricted network environment, you must disable the default catalogs as a cluster administrator.</p>
 </div>
+<div class="ulist">
+<div class="title">Procedure</div>
+<ul>
+<li>
+<p>Disable the sources for the default catalogs by adding <code>disableAllDefaultSources: true</code> to the <code>OperatorHub</code> object:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>oc patch OperatorHub cluster <span class="nt">--type</span> json <span class="se">\</span>
+    <span class="nt">-p</span> <span class="s1">'[{"op": "add", "path": "/spec/disableAllDefaultSources", "value": true}]'</span></code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>After installation, you must edit the Image Registry Operator configuration to switch the <code>managementState</code> from <code>Removed</code> to <code>Managed</code>.</p>
+<p>Alternatively, you can use the web console to manage catalog sources. From the <strong>Administration</strong> &#8594; <strong>Cluster Settings</strong> &#8594; <strong>Configuration</strong> &#8594; <strong>OperatorHub</strong> page, click the <strong>Sources</strong> tab, where you can create, delete, disable, and enable individual sources.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="installation-registry-storage-config_installing-vsphere"><a class="anchor" href="#installation-registry-storage-config_installing-vsphere"></a>Image registry storage configuration</h3>
+<h3 id="installation-registry-storage-config_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-registry-storage-config_installing-restricted-networks-vsphere"></a>Image registry storage configuration</h3>
 <div class="paragraph">
 <p>The Image Registry Operator is not initially available for platforms that do
 not provide default storage. After installation, you must configure your
@@ -35610,7 +35647,7 @@ registry to use storage so that the Registry Operator is made available.</p>
 <p>Additional instructions are provided for allowing the image registry to use block storage types by using the <code>Recreate</code> rollout strategy during upgrades.</p>
 </div>
 <div class="sect3">
-<h4 id="registry-configuring-storage-vsphere_installing-vsphere"><a class="anchor" href="#registry-configuring-storage-vsphere_installing-vsphere"></a>Configuring registry storage for VMware vSphere</h4>
+<h4 id="registry-configuring-storage-vsphere_installing-restricted-networks-vsphere"><a class="anchor" href="#registry-configuring-storage-vsphere_installing-restricted-networks-vsphere"></a>Configuring registry storage for VMware vSphere</h4>
 <div class="paragraph">
 <p>As a cluster administrator, following installation you must configure your registry to use storage.</p>
 </div>
@@ -35759,7 +35796,7 @@ image-registry   4.7                                  True        False         
 </div>
 </div>
 <div class="sect3">
-<h4 id="installation-registry-storage-non-production_installing-vsphere"><a class="anchor" href="#installation-registry-storage-non-production_installing-vsphere"></a>Configuring storage for the image registry in non-production clusters</h4>
+<h4 id="installation-registry-storage-non-production_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-registry-storage-non-production_installing-restricted-networks-vsphere"></a>Configuring storage for the image registry in non-production clusters</h4>
 <div class="paragraph">
 <p>You must configure storage for the Image Registry Operator. For non-production
 clusters, you can set the image registry to an empty directory. If you do so,
@@ -35806,7 +35843,7 @@ components, the <code>oc patch</code> command fails with the following error:</p
 </div>
 </div>
 <div class="sect3">
-<h4 id="installation-registry-storage-block-recreate-rollout_installing-vsphere"><a class="anchor" href="#installation-registry-storage-block-recreate-rollout_installing-vsphere"></a>Configuring block registry storage for VMware vSphere</h4>
+<h4 id="installation-registry-storage-block-recreate-rollout_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-registry-storage-block-recreate-rollout_installing-restricted-networks-vsphere"></a>Configuring block registry storage for VMware vSphere</h4>
 <div class="paragraph">
 <p>To allow the image registry to use block storage types such as vSphere Virtual Machine Disk (VMDK) during upgrades as a cluster administrator, you can use the <code>Recreate</code> rollout strategy.</p>
 </div>
@@ -35925,7 +35962,7 @@ have more than one replica.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="installation-complete-user-infra_installing-vsphere"><a class="anchor" href="#installation-complete-user-infra_installing-vsphere"></a>Completing installation on user-provisioned infrastructure</h2>
+<h2 id="installation-complete-user-infra_installing-restricted-networks-vsphere"><a class="anchor" href="#installation-complete-user-infra_installing-restricted-networks-vsphere"></a>Completing installation on user-provisioned infrastructure</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>After you complete the Operator configuration, you can finish installing the
@@ -36093,6 +36130,9 @@ cluster machines.</p>
 <p>See "Enabling multipathing with kernel arguments on RHCOS" in the <em>Post-installation machine configuration tasks</em> documentation for more information.</p>
 </div>
 </li>
+<li>
+<p>Register your cluster on the <a href="https://console.redhat.com/openshift/register">Cluster registration</a> page.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -36101,7 +36141,7 @@ cluster machines.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="anti-affinity-vsphere_installing-vsphere"><a class="anchor" href="#anti-affinity-vsphere_installing-vsphere"></a>Configuring vSphere DRS anti-affinity rules for control plane nodes</h2>
+<h2 id="anti-affinity-vsphere_installing-restricted-networks-vsphere"><a class="anchor" href="#anti-affinity-vsphere_installing-restricted-networks-vsphere"></a>Configuring vSphere DRS anti-affinity rules for control plane nodes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>vSphere Distributed Resource Scheduler (DRS) anti-affinity rules can be configured to support higher availability of OpenShift Container Platform control plane nodes. Anti-affinity rules ensure that the vSphere Virtual Machines for the OpenShift Container Platform control plane nodes are not scheduled to the same vSphere Host.</p>
@@ -36199,7 +36239,7 @@ cluster machines.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="vsphere-pv-backup_installing-vsphere"><a class="anchor" href="#vsphere-pv-backup_installing-vsphere"></a>Backing up VMware vSphere volumes</h2>
+<h2 id="vsphere-pv-backup_installing-restricted-networks-vsphere"><a class="anchor" href="#vsphere-pv-backup_installing-restricted-networks-vsphere"></a>Backing up VMware vSphere volumes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>OpenShift Container Platform provisions new volumes as independent persistent disks to freely attach and detach the volume on any node in the cluster. As a consequence, it is not possible to back up volumes that use snapshots, or to restore volumes from snapshots. See <a href="https://docs.vmware.com/en/VMware-vSphere/6.7/com.vmware.vsphere.vm_admin.doc/GUID-53F65726-A23B-4CF0-A7D5-48E584B88613.html">Snapshot Limitations</a> for more information.</p>
@@ -36230,7 +36270,7 @@ cluster machines.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="cluster-telemetry_installing-vsphere"><a class="anchor" href="#cluster-telemetry_installing-vsphere"></a>Telemetry access for OpenShift Container Platform</h2>
+<h2 id="cluster-telemetry_installing-restricted-networks-vsphere"><a class="anchor" href="#cluster-telemetry_installing-restricted-networks-vsphere"></a>Telemetry access for OpenShift Container Platform</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In OpenShift Container Platform Branch Build, the Telemetry service, which runs by default to provide metrics about cluster health and the success of updates, requires internet access. If your cluster is connected to the internet, Telemetry runs automatically, and your cluster is registered to <a href="https://console.redhat.com/openshift">OpenShift Cluster Manager</a>.</p>
@@ -36257,11 +36297,11 @@ cluster machines.</p>
 <p><a href="../../post_installation_configuration/cluster-tasks.html#available_cluster_customizations">Customize your cluster</a>.</p>
 </li>
 <li>
-<p>If necessary, you can
-<a href="../../support/remote_health_monitoring/opting-out-of-remote-health-reporting.html#opting-out-remote-health-reporting_opting-out-remote-health-reporting">opt out of remote health reporting</a>.</p>
+<p>If the mirror registry that you used to install your cluster has a trusted CA, add it to the cluster by <a href="../../openshift_images/image-configuration.html#images-configuration-cas_image-configuration">configuring additional trust stores</a>.</p>
 </li>
 <li>
-<p><a href="../../registry/configuring_registry_storage/configuring-registry-storage-vsphere.html#configuring-registry-storage-vsphere">Set up your registry and configure registry storage</a>.</p>
+<p>If necessary, you can
+<a href="../../support/remote_health_monitoring/opting-out-of-remote-health-reporting.html#opting-out-remote-health-reporting_opting-out-remote-health-reporting">opt out of remote health reporting</a>.</p>
 </li>
 <li>
 <p>Optional: <a href="../../installing/installing_vsphere/using-vsphere-problem-detector-operator.html#vsphere-problem-detector-viewing-events_vsphere-problem-detector">View the events from the vSphere Problem Detector Operator</a> to determine if the cluster has permission or storage configuration issues.</p>
