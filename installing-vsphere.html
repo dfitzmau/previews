@@ -15626,6 +15626,30 @@
 
 
                   <li>
+                    <a class="" href="../../cicd/gitops/configuring-secure-communication-with-redis.html">
+                      Configuring secure communication with Redis
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
                     <a class="" href="../../cicd/gitops/health-information-for-resources-deployment.html">
                       Monitoring application health status
                     </a>
@@ -15748,6 +15772,30 @@
                   <li>
                     <a class="" href="../../cicd/gitops/monitoring-argo-cd-custom-resource-workloads.html">
                       Monitoring Argo CD custom resource workloads
+                    </a>
+                  </li>
+
+                
+
+
+                <!-- for each topic in this topic_group, in Welcome 2, what topics exist?
+                     Welcome 2 Index Page, Welcome 3 and Welcome 2 More - we list them all.. -->
+
+                
+                
+                
+                
+                
+
+                <!-- is this is a single page? That is, does this topic have more topics?
+                 Welcome 2 Index Page and Welcome 2 More -->
+
+
+
+
+                  <li>
+                    <a class="" href="../../cicd/gitops/viewing-argo-cd-logs.html">
+                      Viewing Argo CD logs
                     </a>
                   </li>
 
@@ -33793,15 +33841,15 @@ worker1.ocp4.example.com.	IN	A	192.168.1.7 <i class="conum" data-value="6"></i><
 </div>
 </div>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Session persistence is not required for the API load balancer to function properly.</p>
+<p>Do not configure session persistence for an API load balancer. Configuring session persistence for a Kubernetes API server might cause performance issues from excess application traffic for your OpenShift Container Platform cluster and the Kubernetes API that runs inside the cluster.</p>
 </div>
 </td>
 </tr>
@@ -35546,20 +35594,31 @@ installation files in.</td>
 <p>On the <strong>Select a compute resource</strong> tab, select the name of a host in your datacenter.</p>
 </li>
 <li>
-<p>Optional: On the <strong>Select storage</strong> tab, customize the storage options.</p>
-</li>
-<li>
 <p>On the <strong>Select clone options</strong>, select
 <strong>Customize this virtual machine&#8217;s hardware</strong>.</p>
 </li>
 <li>
-<p>On the <strong>Customize hardware</strong> tab, click <strong>VM Options</strong> &#8594; <strong>Advanced</strong>.</p>
+<p>Optional: On the <strong>Customize hardware</strong> tab, click <strong>VM Options</strong> &#8594; <strong>Advanced</strong>.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The following configuration suggestions are for example purposes only. As a cluster administrator, you must configure resources according to the resource demands placed on your cluster. To best manage cluster resources, consider creating a resource pool from the cluster&#8217;s root resource pool.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Optional: Override default DHCP networking in vSphere. To enable static IP networking:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
+<p>Override default DHCP networking in vSphere. To enable static IP networking:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Set your static IP configuration:</p>
 <div class="listingblock">
@@ -35574,48 +35633,24 @@ installation files in.</td>
 </div>
 </div>
 </li>
-<li>
-<p>Set the <code>guestinfo.afterburn.initrd.network-kargs</code> property before booting a VM from an OVA in vSphere:</p>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight nowrap"><code data-lang="terminal"><span class="gp">$</span><span class="w"> </span>govc vm.change <span class="nt">-vm</span> <span class="s2">"&lt;vm_name&gt;"</span> <span class="nt">-e</span> <span class="s2">"guestinfo.afterburn.initrd.network-kargs=</span><span class="k">${</span><span class="nv">IPCFG</span><span class="k">}</span><span class="s2">"</span></code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Optional: In the event of cluster performance issues, from the <strong>Latency Sensitivity</strong> list, select <strong>High</strong>. Ensure that your VM&#8217;s CPU and memory reservation have the following values:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Memory reservation value must be equal to its configured memory size.</p>
-</li>
-<li>
-<p>CPU reservation value must be at least the number of low latency virtual CPUs multiplied by the measured physical CPU speed.</p>
-</li>
 </ul>
 </div>
 </li>
 <li>
-<p>Click <strong>Edit Configuration</strong>, and on the <strong>Configuration Parameters</strong> window, search the list of available parameters for steal clock accounting (<code>stealclock.enable</code>). If it is available, set its value to <code>TRUE</code>. Enabling steal clock accounting can help with troubleshooting cluster issues.</p>
+<p>Click <strong>Edit Configuration</strong>, and on the <strong>Configuration Parameters</strong> window, search the list of available parameters for steal clock accounting (<code>stealclock.enable</code>). Set the parameter to the value of <code>TRUE</code>. Enabling steal clock accounting can help with troubleshooting cluster issues.</p>
 </li>
 <li>
 <p>Click <strong>Add Configuration Params</strong>. Define the following parameter names and values:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>guestinfo.ignition.config.data</code>: Locate the base-64 encoded files that you created previously in this procedure, and paste the contents of the base64-encoded Ignition config file for this machine type.</p>
-</li>
-<li>
-<p><code>guestinfo.ignition.config.data.encoding</code>: Specify <code>base64</code>.</p>
-</li>
-<li>
 <p><code>disk.EnableUUID</code>: Specify <code>TRUE</code>.</p>
 </li>
 <li>
 <p><code>stealclock.enable</code>: If this parameter was not defined, add it and specify <code>TRUE</code>.</p>
+</li>
+<li>
+<p>Create a child resource pool from the cluster&#8217;s root resource pool. Perform resource allocation in this child resource pool.</p>
 </li>
 </ul>
 </div>
@@ -35715,18 +35750,12 @@ Ignition: user-provided config was applied</span></code></pre>
 <p>On the <strong>Select a compute resource</strong> tab, select the name of a host in your datacenter.</p>
 </li>
 <li>
-<p>Optional: On the <strong>Select storage</strong> tab, customize the storage options.</p>
-</li>
-<li>
 <p>On the <strong>Select clone options</strong>, select <strong>Customize this virtual machine&#8217;s hardware</strong>.</p>
 </li>
 <li>
 <p>On the <strong>Customize hardware</strong> tab, click <strong>VM Options</strong> &#8594; <strong>Advanced</strong>.</p>
 <div class="ulist">
 <ul>
-<li>
-<p>From the <strong>Latency Sensitivity</strong> list, select <strong>High</strong>.</p>
-</li>
 <li>
 <p>Click <strong>Edit Configuration</strong>, and on the <strong>Configuration Parameters</strong> window, click <strong>Add Configuration Params</strong>. Define the following parameter names and values:</p>
 <div class="ulist">
